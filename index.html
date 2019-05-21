@@ -10,11 +10,13 @@
     <link href= "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"> 
   </head>
 <nav class="side-nav">
-    <h1 id="logo">IdeaBox Redux</h1>
-    <hr>
-    <h4 id="starred-ideas-filter">Filter Starred Ideas</h4>
+  <header>
+  <h1>IdeaBox Redux</h1>
+  </header>
+  <section class="starred-ideas">
+    <h4>Filter Starred Ideas</h4>
     <button type="submit" class="starred-ideas-btn">Show Starred Ideas</button>
-    <hr>
+  </section>
   <section class="quality">
     <h4>Filter by Quality</h4>
     <h3 class="hover-orange">Swill</h3>
@@ -32,8 +34,9 @@
     <label for="title-input">Title</label>
     <input type="text" class="title-input" aria-required="true">
     <label for="body-input">Body</label>
-    <input type="text" class="body-input" aria-require="true">
+    <textarea>Search ideas</textarea>
     <button type="submit" class="save-btn">Save</button>
+    <input type="text" class="body-input" placeholder="Search ideas" aria-require="true">
   </form>
 </main>
 <section class="card-contatiner">
