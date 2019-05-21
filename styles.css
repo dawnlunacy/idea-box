@@ -1,0 +1,86 @@
+body{
+	font-family: open sans;
+	display: flex;
+	flex-flow: row wrap;
+}
+.body-input{
+	margin-bottom: 10px;
+}
+button{
+	background-color: #5356A4;
+	color:#E9E9F3;
+	border-style: none;
+	padding: 10px;
+	font-weight: 700;
+	font-size: 15px;
+}
+.card-input{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	margin: auto;
+	width: 50%;
+
+}
+.card-input-area{
+	background-color: #A9AAD2;
+}
+
+.card-container{
+	background-color: #EAEAF4;
+}
+
+form{
+	width:75%;
+}
+h1{
+	font-weight: 700;
+	color: #FFFFFF;
+	font-size: 17px;
+	margin: 10px;
+}
+h3{
+	font-weight: 400;
+	font-size: 15px;
+	color: #FFFFFF;
+	margin: 10px;
+}
+h4{
+	font-weight: 700;
+	font-size: 10px;
+	color: #BFBFFD;
+	display: block;
+	margin: 10px;
+}
+
+label{
+	font-weight: 700;
+	font-size: 10px;
+	display: block; 
+	margin: 10px 0px 10px 0px;
+}
+
+main{
+	width: 75%;
+}
+
+nav {
+	background-color: #1F1F3D;
+	width: 25%;
+
+}
+
+.save-btn{
+	background-color:#353567;
+}
+
+section{
+	width: 75%;
+	display: flex;
+    justify-content: flex-end;
+    margin: auto;
+}
+
+.quality{
+	display: block;
+}
