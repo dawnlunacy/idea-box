@@ -90,6 +90,10 @@ header{
 	width:100%;
 	height: 20px;
 }
+.hover-orange:hover{
+	background-color: #D14119;
+	padding: 20px;
+}
 hr{
 	border-bottom-color: #353567;
 	border-bottom-width: 1px;
@@ -104,20 +108,16 @@ label{
 }
 #logo{
 	margin: 20px 0px 10px 20px;
-
 }
-
 main{
 	width: 75%;
 	margin-left: 25%;
 }
-
 nav {
 	background-color: #1F1F3D;
     width: 25%;
     height: 125vh;
     position: absolute;
-
 }
 .new-quality-input{
 	width: 85%;
@@ -125,12 +125,10 @@ nav {
     margin: 20px 0px 20px 0px;
     border-style: none;
 }
-
 .save-btn{
 	background-color:#353567;
 	width: 100%;
 }
-
 section{
 	width: 100%;
 	display: flex;
@@ -148,7 +146,6 @@ section{
     border-color: #353567;
     border-width: 2px;
 }
-
 .quality{
 	display: block;
    	margin: 0px 20px 20px;
