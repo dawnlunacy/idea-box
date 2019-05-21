@@ -1,0 +1,153 @@
+article{
+	border-color: #353567;
+	border-width: 2px;
+	border-style: solid;
+	width: 175px;
+	height: 200px;
+}
+body{
+	font-family: open sans;
+	display: flex;
+	flex-flow: row wrap;
+	height: 100vh;
+}
+.body-input{
+	height: 85px;
+    border-style: solid;
+    border-color: #353567;
+    border-width: 2px;
+    margin-bottom: 20px;
+}
+button{
+	background-color: #5356A4;
+    color: #E9E9F3;
+    border-style: none;
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+    width: 85%;
+}
+.card-body{
+	padding: 10px;
+}
+.card-input{
+	display: flex;
+    flex-direction: column;
+    margin: 50px auto auto auto;
+    width: 50%;
+
+}
+.card-input-area{
+	background-color: #A9AAD2;
+	height: 50vh;
+}
+
+.card-contatiner{
+	background-color: #EAEAF4;
+    display: flex;
+    justify-content: flex-end;
+    height: 75vh;
+}
+.card-title{
+	color: #1F1F3D;
+	font-weight: 700;
+	padding: 0px 0px 10px 10px;
+	margin: 10px 0px 0px 0px;
+}
+footer{
+	background-color: #3536A4;
+	color: #FFFFFF;
+	font-weight: 700;
+	font-size: 12px;    
+	text-align: center;
+    height: 30px;
+}
+
+h1{
+	font-weight: 700;
+	color: #FFFFFF;
+	font-size: 17px;
+	padding-bottom: 20px;
+}
+h3{
+	font-weight: 400;
+	font-size: 15px;
+	color: #FFFFFF;
+	margin: 20px 0px 20px 0px;
+}
+h4{
+	font-weight: 700;
+	font-size: 10px;
+	color: #BFBFFD;
+	display: block;
+	margin-top: 20px;
+}
+h5{
+	padding: 10px;
+}
+header{
+	background-color: #353567;
+	width:100%;
+	height: 20px;
+}
+.hover-orange:hover{
+	background-color: #D14119;
+	padding: 20px;
+}
+hr{
+	border-bottom-color: #353567;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+label{
+	font-weight: 700;
+	font-size: 10px;
+	display: block; 
+	margin: 10px 0px 10px 0px;
+}
+#logo{
+	margin: 20px 0px 10px 20px;
+}
+main{
+	width: 75%;
+	margin-left: 25%;
+}
+nav {
+	background-color: #1F1F3D;
+    width: 25%;
+    height: 125vh;
+    position: absolute;
+}
+.new-quality-input{
+	width: 85%;
+    height: 40px;
+    margin: 20px 0px 20px 0px;
+    border-style: none;
+}
+.save-btn{
+	background-color:#353567;
+	width: 100%;
+}
+section{
+	width: 100%;
+	display: flex;
+    justify-content: flex-end;
+}
+.starred-ideas-btn{
+	margin:20px;
+}
+#starred-ideas-filter{
+	margin: 20px 0px 0px 20px;
+}
+.title-input{
+	height: 40px;
+    border-style: solid;
+    border-color: #353567;
+    border-width: 2px;
+}
+.quality{
+	display: block;
+   	margin: 0px 20px 20px;
+}
+
