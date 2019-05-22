@@ -19,21 +19,26 @@ titleInput.addEventListener('keyup',****)
 
 
 //goal: function that calls the saveToStorage function and prints card onto DOM called createNewCard
-function createNewCard(titleText, bodyText){
+
+function createNewCard() {
   saveToStorage()
-  var newCard =
+  var newCard = new IdeaCreator(titleInput, bodyInput)
+
+
+  var cardToAppend = 
   `<article class="card-display">
     <body>
       <header>
       </header>
-      <h3 class="card-title">${titleText}</h3>
-      <p class="card-body">${bodyText}</p> 
+      <h3 class="card-title">${titleInput}</h3>
+      <p class="card-body">${bodyInput}</p> 
       <footer>
-      <h5 class="card-footer">Quality: Swill</h5>
+      <h5 class="card-footer">${this.quality}</h5>
       </footer>
     </body>
+    
   </article>`
-  cardContainer.insertAdjacentHTML('afterbegin', newCard);
+  cardContainer.insertAdjacentHTML('afterbegin', cardToAppend);
 };
 
       //invoke saveToStorage function

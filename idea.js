@@ -5,12 +5,49 @@ class IdeaCreator {
     this.body = body;
     this.star = false;
     this.quality = 'Swill';
+    this.id = Date.now();
   }
-  .saveToStorage(){
+  
+    saveToStorage() {
+      var idea = {
+        title: this.title,
+        body: this.body,
+        star: this.star,
+        quality: this.quality,
+        id: this.id
+      };
+      var stringifiedIdea = JSON.stringify(idea);
 
-  }
+      localStorage.setItem(idea.id, stringifiedIdea);
+    };
 
-}:
+    updateIdea(thingToChange, change) {
+      var retrieveIdea = localStorage.getItem(this.id);
+      var parsedIdea = JSON.parse(retrieveIdea);
+      parsedIdea[thingToChange] = change;  
+      this[thingToChange] = change; 
+      this.saveToStorage();
+    }
+
+    deleteIdea() {
+      localStorage.removeItem(this.id);
+    };
+};
+
+
+
+
+
+
+//deletefromStorage
+  //use localStorage.removeItem([key]) to update local storage
+
+//updateIdea
+  //retrieve JSON from localStorage (localStorage.getItem) 
+  //parse JSON object to become its original JS data *key-value pair*
+  //access the array of properties for that JSON Object
+  //manipulate or edit the array by utilizing array prototype methods
+    //invoke save to storage function
 //have a constructor to create more instances of the class ie objects
 //set key of property to have a value of title
 //set key of property to have a value of body
@@ -27,20 +64,14 @@ class IdeaCreator {
   // set JSON object to variable to prep for storage
   //then use localstorage.setItem to set key value pair from JSON
 
-//updateIdea
-  //retrieve JSON from localStorage (localStorage.getItem) 
-  //parse JSON object to become its original JS data *key-value pair*
-  //access the array of properties for that JSON Object
-  //manipulate or edit the array but utilizing array prototype methods
-    //invoke save to storage function
 
-//deletefromStorage
-  //invoke update idea to manipulate data
-  //use localStorage.removeItem([key]) to update local storage
 
 //update quality
  //we think first use updateIdea
  //then use the splice array protoype method to chage the value of the key for the property of quality
+
+ //**** DO LATTER***
+
 
 
  
