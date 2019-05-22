@@ -1,11 +1,11 @@
 //create a class idea
 class IdeaCreator {
-  constructor(title, body){
+  constructor(title, body, star, quality, id){
     this.title = title;
     this.body = body;
-    this.star = false;
-    this.quality = 'Swill';
-    this.id = Date.now();
+    this.star = star || false;
+    this.quality = quality || 'Swill';
+    this.id = id || Date.now();
   }
   
     saveToStorage() {
@@ -34,6 +34,7 @@ class IdeaCreator {
     };
 };
 
+module.exports = IdeaCreator;
 
 
 

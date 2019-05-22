@@ -1,6 +1,7 @@
 // assign a global variable to the html class of 'save-btn' called saveBtn
 // assign a global variable to the html class of 'new-quality-btn' called newQualityBtn
 // assign a global variable to the html class of 'starred-ideas-btn' called starredIdeasBtn
+var IdeaCreator =require('./idea.js')
 var saveBtn = document.querySelector('.save-btn');
 var newQualityBtn = document.querySelector('.new-quality-btn');
 var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
@@ -13,15 +14,9 @@ titleInput.addEventListener('keyup',****)
 // add event listener on click to saveBtn that invokes the ---function---saveBtnHelper
 
 
-
-
-
-
-
 //goal: function that calls the saveToStorage function and prints card onto DOM called createNewCard
 
 function createNewCard() {
-  saveToStorage()
   var newCard = new IdeaCreator(titleInput, bodyInput)
 
 
@@ -30,13 +25,13 @@ function createNewCard() {
     <body>
       <header>
       </header>
-      <h3 class="card-title">${titleInput}</h3>
-      <p class="card-body">${bodyInput}</p> 
+      <h3 class="card-title">${newCard.titleInput}</h3>
+      <p class="card-body">${newCard.bodyInput}</p> 
       <footer>
-      <h5 class="card-footer">${this.quality}</h5>
+      <h5 class="card-footer">${newCard.quality}</h5>
       </footer>
     </body>
-    
+
   </article>`
   cardContainer.insertAdjacentHTML('afterbegin', cardToAppend);
 };
