@@ -1,8 +1,14 @@
 // assign a global variable to the html class of 'save-btn' called saveBtn
 // assign a global variable to the html class of 'new-quality-btn' called newQualityBtn
 // assign a global variable to the html class of 'starred-ideas-btn' called starredIdeasBtn
+var saveBtn = document.querySelector('.save-btn');
+var newQualityBtn = document.querySelector('.new-quality-btn');
+var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
 
-// add event listener on click to saveBtn that invokes the ---function---
+
+
+saveBtn.addEventListener('click',saveBtnHelper())
+// add event listener on click to saveBtn that invokes the ---function---saveBtnHelper
 
 
 
@@ -11,6 +17,9 @@
 
 
 //goal: function that calls the saveToStorage function and prints card onto DOM called createNewCard
+function createNewCard(){
+  
+}
       //invoke saveToStorage function
       //create new local variable with the html for new card (ensure star in included) called newCard
           //create template literal for the user input of title

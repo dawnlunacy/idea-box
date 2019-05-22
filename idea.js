@@ -1,4 +1,16 @@
 //create a class idea
+class IdeaCreator {
+  constructor(title, body){
+    this.title = title;
+    this.body = body;
+    this.star = false;
+    this.quality = 'Swill';
+  }
+  .saveToStorage(){
+
+  }
+
+}:
 //have a constructor to create more instances of the class ie objects
 //set key of property to have a value of title
 //set key of property to have a value of body
