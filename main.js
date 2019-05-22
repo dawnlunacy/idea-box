@@ -4,10 +4,12 @@
 var saveBtn = document.querySelector('.save-btn');
 var newQualityBtn = document.querySelector('.new-quality-btn');
 var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
-
-
+var titleInput = document.querySelector('.title-input.value')
+var bodyInput = document.querySelector('.body-input.value')
+var cardcontainer = document.querySelector('.card-container')
 
 saveBtn.addEventListener('click',saveBtnHelper())
+titleInput.addEventListener('keyup',****)
 // add event listener on click to saveBtn that invokes the ---function---saveBtnHelper
 
 
@@ -17,9 +19,23 @@ saveBtn.addEventListener('click',saveBtnHelper())
 
 
 //goal: function that calls the saveToStorage function and prints card onto DOM called createNewCard
-function createNewCard(){
-  
-}
+function createNewCard(titleText, bodyText){
+  saveToStorage()
+  var newCard =
+  `<article class="card-display">
+    <body>
+      <header>
+      </header>
+      <h3 class="card-title">${titleText}</h3>
+      <p class="card-body">${bodyText}</p> 
+      <footer>
+      <h5 class="card-footer">Quality: Swill</h5>
+      </footer>
+    </body>
+  </article>`
+  cardContainer.insertAdjacentHTML('afterbegin', newCard);
+};
+
       //invoke saveToStorage function
       //create new local variable with the html for new card (ensure star in included) called newCard
           //create template literal for the user input of title
