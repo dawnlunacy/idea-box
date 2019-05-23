@@ -1,5 +1,5 @@
 //create a class idea
-class IdeaCreator {
+class Idea {
   constructor(title, body, star, quality, id){
     this.title = title;
     this.body = body;
@@ -9,7 +9,7 @@ class IdeaCreator {
   }
   
     saveToStorage() {
-      localStorage.setItem(this.id, JSON.stringify(this));
+      localStorage.setItem('ideas', JSON.stringify(ideas));
     };
 
     updateIdea(thingToChange, change) {
