@@ -34,7 +34,7 @@ class IdeaCreator {
     };
 };
 
-module.exports = IdeaCreator;
+// module.exports = IdeaCreator
 
 
 

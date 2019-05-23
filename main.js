@@ -1,40 +1,59 @@
-// assign a global variable to the html class of 'save-btn' called saveBtn
-// assign a global variable to the html class of 'new-quality-btn' called newQualityBtn
-// assign a global variable to the html class of 'starred-ideas-btn' called starredIdeasBtn
-var IdeaCreator =require('./idea.js')
+// var IdeaCreator = require('./idea.js')
+
 var saveBtn = document.querySelector('.save-btn');
 var newQualityBtn = document.querySelector('.new-quality-btn');
 var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
-var titleInput = document.querySelector('.title-input.value')
-var bodyInput = document.querySelector('.body-input.value')
-var cardcontainer = document.querySelector('.card-container')
+var titleInput = document.querySelector('.title-input')
+var bodyInput = document.querySelector('.body-input')
+var cardDisplayArea = document.querySelector('#card-display-area')
+ 
 
-saveBtn.addEventListener('click',saveBtnHelper())
-titleInput.addEventListener('keyup',****)
-// add event listener on click to saveBtn that invokes the ---function---saveBtnHelper
+saveBtn.addEventListener('click',saveBtnHelper)
+console.log(saveBtn)
+// titleInput.addEventListener('keyup',****)
+
+
+
+
+
+function starredIdeasBtn(e){
+
+};
+function newQualityBtn(e){
+
+};
+
+
 
 
 //goal: function that calls the saveToStorage function and prints card onto DOM called createNewCard
 
 function createNewCard() {
-  var newCard = new IdeaCreator(titleInput, bodyInput)
-
-
+  // var newCard = new IdeaCreator(titleInput, bodyInput)
   var cardToAppend = 
   `<article class="card-display">
     <body>
       <header>
       </header>
-      <h3 class="card-title">${newCard.titleInput}</h3>
-      <p class="card-body">${newCard.bodyInput}</p> 
+      <h3 class="card-title">${titleInput.value}</h3>
+      <p class="card-body">${bodyInput.value}</p> 
       <footer>
-      <h5 class="card-footer">${newCard.quality}</h5>
+      <h5 class="card-footer">quality:"Swill"</h5>
       </footer>
     </body>
-
   </article>`
-  cardContainer.insertAdjacentHTML('afterbegin', cardToAppend);
+  cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
+  // newCard.innerHTML += cardToAppend;
+  // cardContainer.insertAdjacentHTML('afterbegin', newCard);
 };
+
+function saveBtnHelper(e){
+  e.preventDefault();
+  console.log(titleInput.value);
+  createNewCard();
+  console.log(bodyInput.value);
+}
+
 
       //invoke saveToStorage function
       //create new local variable with the html for new card (ensure star in included) called newCard
