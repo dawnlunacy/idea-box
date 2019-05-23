@@ -1,5 +1,3 @@
-// var IdeaCreator = require('./idea.js')
-
 var saveBtn = document.querySelector('.save-btn');
 var newQualityBtn = document.querySelector('.new-quality-btn');
 var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
@@ -9,7 +7,6 @@ var cardDisplayArea = document.querySelector('#card-display-area')
  
 
 saveBtn.addEventListener('click',saveBtnHelper)
-console.log(saveBtn)
 // titleInput.addEventListener('keyup',****)
 
 
@@ -29,7 +26,9 @@ function newQualityBtn(e){
 //goal: function that calls the saveToStorage function and prints card onto DOM called createNewCard
 
 function createNewCard() {
-  // var newCard = new IdeaCreator(titleInput, bodyInput)
+  var newCard = new IdeaCreator(titleInput.value, bodyInput.value)
+  newCard.saveToStorage();
+  console.log(newCard)
   var cardToAppend = 
   `<article class="card-display">
     <body>
@@ -43,15 +42,11 @@ function createNewCard() {
     </body>
   </article>`
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
-  // newCard.innerHTML += cardToAppend;
-  // cardContainer.insertAdjacentHTML('afterbegin', newCard);
 };
 
 function saveBtnHelper(e){
   e.preventDefault();
-  console.log(titleInput.value);
   createNewCard();
-  console.log(bodyInput.value);
 }
 
 

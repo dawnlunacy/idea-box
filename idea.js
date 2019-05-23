@@ -9,16 +9,16 @@ class IdeaCreator {
   }
   
     saveToStorage() {
-      var idea = {
-        title: this.title,
-        body: this.body,
-        star: this.star,
-        quality: this.quality,
-        id: this.id
-      };
-      var stringifiedIdea = JSON.stringify(idea);
+      // var idea = {
+      //   title: this.title,
+      //   body: this.body,
+      //   star: this.star,
+      //   quality: this.quality,
+      //   id: this.id
+      // };
+        // var stringifiedIdea = JSON.stringify(this);
 
-      localStorage.setItem(idea.id, stringifiedIdea);
+      localStorage.setItem(this.id, JSON.stringify(this));
     };
 
     updateIdea(thingToChange, change) {
@@ -34,7 +34,6 @@ class IdeaCreator {
     };
 };
 
-// module.exports = IdeaCreator
 
 
 
