@@ -35,7 +35,7 @@ function loadCards() {
 // var mappedNumbers = numbers.map(function(number){
 //   if(number === 1){
 //     return number+1;
-//   }})
+//    }})
 
 // var filteredNumbers = numbers.filter(function(number){
 //   if(number === 1) {
@@ -52,6 +52,8 @@ function appendCard(title, body) {
     <header>
       <img src='images/star.svg' class="stars star-default">
       <img src='images/star-active.svg' class="stars star-active" onclick="">
+      <img src='images/delete.svg' class="delete-default">
+      <img src='images/delete-active.svg' class="delete-active">
     </header>
     <h3 class="card-title">${title}</h3>
       <p class="card-body">${body}</p>

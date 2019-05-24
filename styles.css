@@ -81,13 +81,27 @@ background-color: #1f1f3b;
   height: 75vh;
 }
 
+.card-display {
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 30px;
+}
+
 .card-title {
   color: #1F1F3D;
   font-weight: 700;
   padding: 0px 0px 10px 10px;
   margin: 10px 0px 0px 0px;
 }
+.delete-default {
+  width:20px;
+  float: right;
+}
 
+.delete-active {
+width:20px;
+float:right;
+}
 footer {
   background-color: #3536A4;
   color: #FFFFFF;
@@ -141,24 +155,27 @@ header {
 /*  padding: 20px;
 */}
 
-hr {
+.border {
   border-bottom-color: #353567;
   border-bottom-width: 1px;
   border-bottom-style: solid;
+  border-top-color: #353567;
+  border-top-width: 1px;
+  border-top-style: solid;
 }
 
-label{
+label {
   font-weight: 700;
   font-size: 10px;
   display: block; 
   margin: 10px 0px 10px 0px;
 }
 
-#logo{
+#logo {
   margin: 20px 0px 10px 20px;
 }
 
-main{
+main {
   width: 75%;
   margin-left: 25%;
 }
@@ -168,16 +185,17 @@ nav {
   width: 25%;
   height: 125vh;
   position: absolute;
+
 }
 
-.new-quality-input{
+.new-quality-input {
   width: 85%;
   height: 40px;
   margin: 20px 0px 20px 0px;
   border-style: none;
 }
 
-.save-btn{
+.save-btn {
   background-color:#353567;
   width: 100%;
   height:40px;
@@ -191,12 +209,12 @@ section {
 }
 
 
-.star-active{
+.star-active {
   width:20px;
 
 }
 
-.star-default{
+.star-default {
   width:20px;
   /*background-color: orange;*/
   color:orange;
@@ -204,22 +222,22 @@ section {
 
 }
 
-.starred-ideas-btn{
+.starred-ideas-btn {
   margin:20px;
 }
 
-#starred-ideas-filter{
+#starred-ideas-filter {
   margin: 20px 0px 0px 20px;
 }
 
-.title-input{
+.title-input {
   height: 40px;
   border-style: solid;
   border-color: #353567;
   border-width: 2px;
 }
 
-.quality{
+.quality {
   display: block;
     margin: 0px 20px 20px;
 }
