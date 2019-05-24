@@ -10,11 +10,13 @@
     <link href= "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"> 
   </head>
 <nav class="side-nav">
-  <h1>IdeaBox Redux</h1>
-  <section class="starred-ideas">
-    <h4>Filter Starred Ideas</h4>
+  <h1 id="logo">IdeaBox Redux</h1>
+  <!-- <section class="starred-ideas"> -->
+    <hr>
+    <h4 id="starred-ideas-filter">Filter Starred Ideas</h4>
     <button type="submit" class="starred-ideas-btn">Show Starred Ideas</button>
-  </section>
+    <hr>
+  <!-- </section> -->
   <section class="quality">
     <h4>Filter by Quality</h4>
     <h3 class="hover-orange">Swill</h3>
@@ -32,26 +34,18 @@
     <label for="title-input">Title</label>
     <input type="text" class="title-input" aria-required="true">
     <label for="body-input">Body</label>
-    <input type="textarea" class="body-input" aria-require="true">
+    <textarea type="text" class="body-input" aria-require="true"></textarea>
     <button type="submit" class="save-btn">Save</button>
-    <input type="text" class="search-input" placeholder="Search ideas" aria-require="true">
+  </form>
+  <form class="search-form">
+    <img src="images/search.svg" class="search-img">
+    <input type="text" class="search-input" placeholder="    Search ideas" aria-require="true">
   </form>
 </main>
-<section class="card-contatiner">
-  <article class="card-display">
-    <body>
-    <header>
-    </header>
-    <h3 class="card-title">Idea Title</h3>
-      <p class="card-body">Idea body. Don't ever play yourself. Every chance you get, I water the plants, Lion! Cloth talk.
-      </p>
-     <footer>
-      <h5 class="card-footer">Quality: Swill</h5>
-     </footer>
-    </body>
-  </article>
-</section>
+<section id="card-display-area"></section>
 </body>
+<script src="idea.js" type="text/javascript"></script>
+<script src="main.js" type="text/javascript"></script> 
 </html>
 
 
