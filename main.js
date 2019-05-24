@@ -57,8 +57,12 @@ function appendCard(title, body) {
     </header>
     <h3 class="card-title">${title}</h3>
       <p class="card-body">${body}</p>
-     <footer>
-      <h5 class="card-footer">Quality: Swill</h5>
+     <footer class="card-footer">
+     <img src='images/upvote.svg' class="upvote-default">
+     <img src='images/upvote-active.svg' class="upvote-active">
+     <h5 class="card-footer">Quality: Swill</h5>
+     <img src='images/downvote.svg' class="downvote-default">
+     <img src='images/downvote-active.svg' class="downvote-active">
      </footer>
     </body>
   </article>`

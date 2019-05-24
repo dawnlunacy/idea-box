@@ -60,6 +60,7 @@ button {
 
 .card-body {
   padding: 10px;
+  height:48%;
 }
 
 .card-input {
@@ -87,6 +88,10 @@ button {
   margin: 30px;
 }
 
+.card-footer {
+
+}
+
 .card-title {
   color: #1F1F3D;
   font-weight: 700;
@@ -101,7 +106,25 @@ button {
 .delete-active {
 width:20px;
 float:right;
+
 }
+
+.downvote-defalut {
+  width: 20px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.downvote-active {
+  display:inline-block;
+  width: 20px;
+  float: right;
+  /*margin-top: 5px;*/
+  /*margin-right: 5px;*/
+
+}
+
 footer {
   background-color: #3536A4;
   color: #FFFFFF;
@@ -244,5 +267,19 @@ section {
 
 .quality {
   display: block;
-    margin: 0px 20px 20px;
+  margin: 0px 20px 20px;
+}
+
+.upvote-default {
+  width: 20px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.upvote-active {
+  width: 20px;
+  float:left;
+  margin-top: 5px;
+  margin-left: 5px;
 }
