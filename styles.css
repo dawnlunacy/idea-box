@@ -13,7 +13,7 @@ body {
   height: 100vh;
 }
 
-.body-input {
+#body-input {
   height: 85px;
   border-style: solid;
   border-radius: 3px;
@@ -215,7 +215,7 @@ nav {
   border-radius: 3px;
 }
 
-.new-quality-input {
+#new-quality-input{
   width: 85%;
   height: 40px;
   margin: 20px 0px 20px 0px;
@@ -258,7 +258,7 @@ section {
   margin: 20px 0px 0px 20px;
 }
 
-.title-input {
+#title-input{
   height: 40px;
   border-radius: 3px;
   border-style: solid;
