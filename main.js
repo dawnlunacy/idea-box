@@ -41,7 +41,7 @@ function loadCards() {
 // var mappedNumbers = numbers.map(function(number){
 //   if(number === 1){
 //     return number+1;
-//   }})
+//    }})
 
 // var filteredNumbers = numbers.filter(function(number){
 //   if(number === 1) {
@@ -51,21 +51,27 @@ function loadCards() {
 
 
 function appendCard(title, body) {
-	var newCard = new Idea(title, body)
-	var cardToAppend = 
-		`<article class="card-display"> 
-    		<body>
-    		<header>
-      			<img src='images/star.svg' class="stars star-default">
-      			<img src='images/star-active.svg' class="stars star-active" onclick="">
-    		</header>
-    		<h3 class="card-title">${title}</h3>
-     			<p class="card-body">${body}</p>
-     		<footer>
-      			<h5 class="card-footer">Quality: Swill</h5>
-    		</footer>
-    		</body>
-  		</article>`
+  var newCard = new Idea(title, body)
+  var cardToAppend = 
+  `  <article class="card-display"> 
+    <body>
+    <header>
+      <img src='images/star.svg' class="stars star-default">
+      <img src='images/star-active.svg' class="stars star-active" onclick="">
+      <img src='images/delete.svg' class="delete-default">
+      <img src='images/delete-active.svg' class="delete-active">
+    </header>
+    <h3 class="card-title">${title}</h3>
+      <p class="card-body">${body}</p>
+     <footer class="card-footer">
+     <img src='images/upvote.svg' class="upvote-default">
+     <img src='images/upvote-active.svg' class="upvote-active">
+     <h5 class="card-footer">Quality: Swill</h5>
+     <img src='images/downvote.svg' class="downvote-default">
+     <img src='images/downvote-active.svg' class="downvote-active">
+     </footer>
+    </body>
+  </article>`
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
 };
 
