@@ -7,15 +7,15 @@ var cardDisplayArea = document.querySelector('#card-display-area');
 var starBtn = document.querySelectorAll('.stars');
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
 var newQualityInput = document.querySelector('#new-quality-input')
-var btns = document.querySelectorAll('.btn')
 
  
 
 window.addEventListener('load', loadCards);
 saveBtn.addEventListener('click', saveBtnHelper);
-titleInput.addEventListener('keyup', enableSave);
-bodyInput.addEventListener('keyup', enableSave);
+titleInput.addEventListener('keyup', titleHelper);
+bodyInput.addEventListener('keyup', bodyHelper);
 newQualityInput.addEventListener('keyup', enableNewQualityBtn);
+
 // starBtn.addEventListener('click', starredIdeasBtn)
 
 
@@ -69,12 +69,29 @@ function appendCard(title, body) {
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
 };
 
+function titleHelper(){
+	enableSave();
+
+};
+
+function bodyHelper(){
+	enableSave();
+};
+
 function enableSave(){
 	if (titleInput.value === '' || bodyInput.value === ''){
 		saveBtn.disabled = true;
 	} else {
 		saveBtn.disabled = false;
 	}
+}
+
+function clearNewCardFields(){
+	if(saveBtn.disabled = true){
+		titleInput.value = '';
+		bodyInput.value = '';
+	}
+	
 }
 
 function enableNewQualityBtn(){
@@ -91,7 +108,7 @@ function saveBtnHelper(e){
 	var body = bodyInput.value;
 	appendCard(title, body);
 	saveCard(title, body)
-	validateInputs();
+	clearNewCardFields();
 }
 
 function saveCard(title, body) {
@@ -99,6 +116,7 @@ function saveCard(title, body) {
 	ideas.push(newCard);
 	newCard.saveToStorage(ideas);
 }
+
 
 
 
