@@ -7,6 +7,7 @@ var cardDisplayArea = document.querySelector('#card-display-area');
 var starBtn = document.querySelectorAll('.stars');
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
 var newQualityInput = document.querySelector('#new-quality-input')
+var hamburgerMenu = document.querySelectorAll('.hamburgerMenu')
 
  
 
@@ -15,6 +16,7 @@ saveBtn.addEventListener('click', saveBtnHelper);
 titleInput.addEventListener('keyup', titleHelper);
 bodyInput.addEventListener('keyup', bodyHelper);
 newQualityInput.addEventListener('keyup', enableNewQualityBtn);
+hamburgerMenu.addEventListener('click', activateHamburgerMenu)
 
 // starBtn.addEventListener('click', starredIdeasBtn)
 
@@ -117,6 +119,10 @@ function saveCard(title, body) {
 	newCard.saveToStorage(ideas);
 }
 
+function activateHamburgerMenu(){
+	hamburgerMenu.remove('hamburgerMenu');
+
+}
 
 
 

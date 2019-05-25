@@ -141,12 +141,6 @@ header {
 /*  padding: 20px;
 */}
 
-hr {
-  border-bottom-color: #353567;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-}
-
 label{
   font-weight: 700;
   font-size: 10px;
@@ -223,3 +217,123 @@ section {
   display: block;
     margin: 0px 20px 20px;
 }
+/* Hidden Menu*/
+i {
+	visibility: hidden;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 1024px) {
+	body{
+		border-color: magenta;
+		border-style: solid;
+		border-width: 3px;
+	}
+
+
+
+}
+
+@media screen and (max-width: 900px) {
+	body{
+		border-color: green;
+		border-style: solid;
+		border-width: 3px;
+	}
+
+}
+
+@media screen and (max-width: 770px) {
+	body{
+		border-color: blue;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	body{
+		border-color: red;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	body{
+		border-color: yellow;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+@media screen and (max-width: 450px) {
+	body{
+		border-color: purple;
+		border-style: solid;
+		border-width: 3px;
+	}
+
+}
+
+@media screen and (max-width: 375px) {
+	body{
+		border-color: purple;
+		border-style: solid;
+		border-width: 3px;
+	}
+	nav{
+		width: 100%;
+		height: 8%;
+	}
+	main{
+		width: 100%;
+    	margin: 0;
+	}
+	.inputs{
+		width: 90%;
+		margin: auto;
+	}
+	.card-input{
+		width: 100%;
+	}
+	.inputs-card-creation{
+		margin: 20px 0px 15px 18px;
+	}
+	.hamburger-menu{
+		visibility: hidden;
+		width: 100%;
+		background-color: #1E1D3D;
+	}
+
+	button{
+		max-width: 90%;
+    	margin: auto;
+	}
+	.search-form{
+		width: 90%;
+		margin: 7px auto auto auto;
+	}
+	.card-input-area{
+		height: 65vh;
+	}
+	i{
+		visibility: visible;
+		display: inline-block;
+		color: #FFFFFF;
+		font-size: 1.5em;
+		margin-left: 20px;
+	}
+
+	#logo{
+		display: inline-block;
+		margin-left: 20%;
+	}
+
+}
+
+
+
+
+
+
