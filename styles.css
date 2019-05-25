@@ -13,7 +13,7 @@ body {
   height: 100vh;
 }
 
-.body-input {
+#body-input {
   height: 85px;
   border-style: solid;
   border-color: #353567;
@@ -170,7 +170,7 @@ nav {
   position: absolute;
 }
 
-.new-quality-input{
+#new-quality-input{
   width: 85%;
   height: 40px;
   margin: 20px 0px 20px 0px;
@@ -212,7 +212,7 @@ section {
   margin: 20px 0px 0px 20px;
 }
 
-.title-input{
+#title-input{
   height: 40px;
   border-style: solid;
   border-color: #353567;

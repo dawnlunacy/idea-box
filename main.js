@@ -1,15 +1,21 @@
 var saveBtn = document.querySelector('.save-btn');
 var newQualityBtn = document.querySelector('.new-quality-btn');
 var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
-var titleInput = document.querySelector('.title-input')
-var bodyInput = document.querySelector('.body-input')
-var cardDisplayArea = document.querySelector('#card-display-area')
-var starBtn = document.querySelectorAll('.stars')
+var titleInput = document.querySelector('#title-input');
+var bodyInput = document.querySelector('#body-input');
+var cardDisplayArea = document.querySelector('#card-display-area');
+var starBtn = document.querySelectorAll('.stars');
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+var newQualityInput = document.querySelector('#new-quality-input')
+var btns = document.querySelectorAll('.btn')
+
  
 
 window.addEventListener('load', loadCards);
-saveBtn.addEventListener('click',saveBtnHelper)
+saveBtn.addEventListener('click', saveBtnHelper);
+titleInput.addEventListener('keyup', enableSave);
+bodyInput.addEventListener('keyup', enableSave);
+newQualityInput.addEventListener('keyup', enableNewQualityBtn);
 // starBtn.addEventListener('click', starredIdeasBtn)
 
 
@@ -45,36 +51,53 @@ function loadCards() {
 
 
 function appendCard(title, body) {
-  var newCard = new Idea(title, body)
-  var cardToAppend = 
-  `  <article class="card-display"> 
-    <body>
-    <header>
-      <img src='images/star.svg' class="stars star-default">
-      <img src='images/star-active.svg' class="stars star-active" onclick="">
-    </header>
-    <h3 class="card-title">${title}</h3>
-      <p class="card-body">${body}</p>
-     <footer>
-      <h5 class="card-footer">Quality: Swill</h5>
-     </footer>
-    </body>
-  </article>`
+	var newCard = new Idea(title, body)
+	var cardToAppend = 
+		`<article class="card-display"> 
+    		<body>
+    		<header>
+      			<img src='images/star.svg' class="stars star-default">
+      			<img src='images/star-active.svg' class="stars star-active" onclick="">
+    		</header>
+    		<h3 class="card-title">${title}</h3>
+     			<p class="card-body">${body}</p>
+     		<footer>
+      			<h5 class="card-footer">Quality: Swill</h5>
+    		</footer>
+    		</body>
+  		</article>`
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
 };
 
+function enableSave(){
+	if (titleInput.value === '' || bodyInput.value === ''){
+		saveBtn.disabled = true;
+	} else {
+		saveBtn.disabled = false;
+	}
+}
+
+function enableNewQualityBtn(){
+	if (newQualityInput.value === '' ){
+		newQualityBtn.disabled = true;
+	} else {
+		newQualityBtn.disabled = false;
+	}
+}
+
 function saveBtnHelper(e){
-  e.preventDefault();
-  var title = titleInput.value;
-  var body = bodyInput.value;
-  appendCard(title, body);
-  saveCard(title, body)
+	e.preventDefault();
+	var title = titleInput.value;
+	var body = bodyInput.value;
+	appendCard(title, body);
+	saveCard(title, body)
+	validateInputs();
 }
 
 function saveCard(title, body) {
-  var newCard = new Idea(title, body)
-  ideas.push(newCard);
-  newCard.saveToStorage(ideas);
+	var newCard = new Idea(title, body)
+	ideas.push(newCard);
+	newCard.saveToStorage(ideas);
 }
 
 
