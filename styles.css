@@ -1,3 +1,6 @@
+*{box-sizing:border-box;}
+
+
 article {
   border-color: #353567;
   border-width: 2px;
@@ -98,7 +101,12 @@ button {
   padding: 0px 0px 10px 10px;
   margin: 10px 0px 0px 0px;
 }
-.delete-default {
+
+.delete-btn{
+  width:20px;
+  float:right;
+}
+/*.delete-default {
   width:20px;
   float: right;
 }
@@ -107,9 +115,12 @@ button {
 width:20px;
 float:right;
 
+}*/
+.downvote-btn{
+  width:20px;
+  float:right;
 }
-
-.downvote-default {
+/*.downvote-default {
   width: 20px;
   float: right;
   margin-top: 5px;
@@ -123,7 +134,7 @@ float:right;
   /*margin-top: 5px;*/
   /*margin-right: 5px;*/
 
-}
+/*}*/
 
 footer {
   background-color: #3536A4;
@@ -132,6 +143,10 @@ footer {
   font-size: 12px;    
   text-align: center;
   height: 30px;
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  margin-top:17px;
 }
 
 .search-form {
@@ -238,16 +253,20 @@ section {
 }
 
 
-.star-active {
+.star-btn{
+  width:20px;
+  float:left;
+}
+/*.star-active {
   width:20px;
 }
 
 .star-default {
   width:20px;
-  /*background-color: orange;*/
+  background-color: orange;
   color:orange;
   /*display:none;*/
-}
+/*/*/
 
 .starred-ideas-btn {
   margin:20px;
@@ -271,7 +290,12 @@ section {
   margin: 0px 20px 20px;
 }
 
-.upvote-default {
+.upvote-btn{
+  width:20px;
+  float:left;
+}
+
+/*.upvote-default {
   width: 20px;
   float: left;
   margin-top: 5px;
@@ -283,4 +307,4 @@ section {
   float:left;
   margin-top: 5px;
   margin-left: 5px;
-}
+}*/
