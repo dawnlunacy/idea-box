@@ -7,7 +7,9 @@ var cardDisplayArea = document.querySelector('#card-display-area');
 var starBtn = document.querySelectorAll('.stars');
 var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
 var newQualityInput = document.querySelector('#new-quality-input')
-var hamburgerMenu = document.querySelectorAll('.hamburgerMenu')
+var hamburgerMenuElements = document.querySelectorAll('.hamburger-menu-element')
+var hamburgerMenuInactive = document.querySelector('#menu-icon')
+var mobileMenuToggleStatus = false;
 
  
 
@@ -16,7 +18,7 @@ saveBtn.addEventListener('click', saveBtnHelper);
 titleInput.addEventListener('keyup', titleHelper);
 bodyInput.addEventListener('keyup', bodyHelper);
 newQualityInput.addEventListener('keyup', enableNewQualityBtn);
-hamburgerMenu.addEventListener('click', activateHamburgerMenu)
+hamburgerMenuInactive.addEventListener('click', activateHamburgerMenu);
 
 // starBtn.addEventListener('click', starredIdeasBtn)
 
@@ -114,21 +116,21 @@ function saveBtnHelper(e){
 }
 
 function saveCard(title, body) {
-	var newCard = new Idea(title, body)
+	var newCard = new Idea(title, body);
 	ideas.push(newCard);
 	newCard.saveToStorage(ideas);
 }
 
 function activateHamburgerMenu(){
-	hamburgerMenu.remove('hamburgerMenu');
-
+	if (mobileMenuToggleStatus === false){
+			for (var i =0; i < hamburgerMenuElements.length; i++){
+				hamburgerMenuElements[i].style.visibility = 'visible'		
+		}
+		mobileMenuToggleStatus = true;
+	} else if (mobileMenuToggleStatus === true){
+		for (var i =0; i < hamburgerMenuElements.length; i++){
+				hamburgerMenuElements[i].style.visibility = 'hidden';
+	}
+		mobileMenuToggleStatus = false;
 }
-
-
-
-
-
-
-
-
-
+}

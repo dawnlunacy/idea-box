@@ -35,27 +35,25 @@ button {
   border-style: solid;
   border-color: #353567;
   border-width: 2px;
- font-size: 14px;
- margin-bottom: 15px;
- margin-left: 45px;
- border-top-right-radius: 5px;
- border-bottom-right-radius: 5px;
- font-weight: 300;
- color: #1f1f3b;
+  font-size: 14px;
+  margin-bottom: 15px;
+  margin-left: 45px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 300;
+  color: #1f1f3b;
 }
 
 .search-img {
   width:36px;
-  background-color:#353567;
   position: absolute;
-color: #ffffff;
-cursor: pointer;
-font-size: 20px;
-padding: 5px;
-border-top-left-radius: 5px;
-border-bottom-left-radius: 5px;
-background-color: #1f1f3b;
-  
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #1f1f3b;
 }
 
 .card-body {
@@ -65,13 +63,13 @@ background-color: #1f1f3b;
 .card-input {
   display: flex;
   flex-direction: column;
-  margin: 50px auto auto auto;
+  margin: 20px auto auto auto;
   width: 50%;
 }
 
 .card-input-area {
   background-color: #A9AAD2;
-  height: 70vh;
+/*  height: 70vh;*/
 }
 
 #card-display-area {
@@ -100,7 +98,7 @@ footer {
 .search-form {
   display: flex;
   flex-direction: column;
-  margin: 50px auto auto auto;
+  margin:auto;
   width: 50%;
 }
 
@@ -221,6 +219,9 @@ section {
 i {
 	visibility: hidden;
 }
+.mobile-header{
+	visibility: hidden;
+}
 
 /* Media Queries*/
 
@@ -230,7 +231,6 @@ i {
 		border-style: solid;
 		border-width: 3px;
 	}
-
 
 
 }
@@ -262,72 +262,86 @@ i {
 
 @media screen and (max-width: 550px) {
 	body{
-		border-color: yellow;
-		border-style: solid;
-		border-width: 3px;
-	}
-}
-@media screen and (max-width: 450px) {
-	body{
 		border-color: purple;
 		border-style: solid;
 		border-width: 3px;
 	}
 
-}
-
-@media screen and (max-width: 375px) {
-	body{
-		border-color: purple;
-		border-style: solid;
-		border-width: 3px;
-	}
-	nav{
-		width: 100%;
-		height: 8%;
-	}
 	main{
 		width: 100%;
     	margin: 0;
 	}
+
 	.inputs{
 		width: 90%;
 		margin: auto;
 	}
+
 	.card-input{
 		width: 100%;
+		height: 100%
 	}
+	.card-input-area{
+		width: 100%;
+    	margin: 0;
+    	z-index: 100000;
+    	padding: 5% 0 20% 0;
+	}
+	.card-display{
+		margin: 10px;
+    	width: 100%;
+    	display: flex;
+    	flex-direction: column;
+
+	}
+
 	.inputs-card-creation{
-		margin: 20px 0px 15px 18px;
+		margin: 20px 0px 0px 18px;;
 	}
+
 	.hamburger-menu{
 		visibility: hidden;
-		width: 100%;
-		background-color: #1E1D3D;
+		width: 100vw;
+    	z-index: 100000000;
+    	height: 100vh;
+    	position: fixed;
+    	top: 0;
 	}
 
 	button{
 		max-width: 90%;
     	margin: auto;
 	}
+
 	.search-form{
 		width: 90%;
 		margin: 7px auto auto auto;
 	}
-	.card-input-area{
-		height: 65vh;
-	}
+
 	i{
 		visibility: visible;
 		display: inline-block;
 		color: #FFFFFF;
 		font-size: 1.5em;
 		margin-left: 20px;
+		position: absolute;
+    	top: 3.5%;
 	}
 
 	#logo{
 		display: inline-block;
-		margin-left: 20%;
+		margin-left: 17%;
+		visibility: visible;
+		position: absolute;
+		left: 15%;
+	}
+
+	.mobile-header{
+		background-color: #1E1D3D;
+		height: 12%;
+		width: 100%;
+		position: fixed;
+		visibility: visible;
 	}
 
 }
