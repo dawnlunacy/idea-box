@@ -31,12 +31,14 @@ button {
   font-size: 15px;
   width: 85%;
 }
+
 .search-input {
   height: 40px;
   border-style: solid;
   border-color: #353567;
   border-width: 2px;
   font-size: 14px;
+  margin-bottom: 15px;
   margin-left: 45px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
@@ -46,7 +48,6 @@ button {
 
 .search-img {
   width:36px;
-  background-color:#353567;
   position: absolute;
   color: #ffffff;
   cursor: pointer;
@@ -55,7 +56,6 @@ button {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   background-color: #1f1f3b;
-  
 }
 
 .card-body {
@@ -66,13 +66,13 @@ button {
 .card-input {
   display: flex;
   flex-direction: column;
-  margin: 50px auto auto auto;
+  margin: 20px auto auto auto;
   width: 50%;
 }
 
 .card-input-area {
   background-color: #A9AAD2;
-  height: 70vh;
+/*  height: 70vh;*/
 }
 
 #card-display-area {
@@ -137,7 +137,7 @@ footer {
 .search-form {
   display: flex;
   flex-direction: column;
-  margin: 50px auto auto auto;
+  margin:auto;
   width: 50%;
 }
 
@@ -265,12 +265,6 @@ section {
   border-color: #353567;
   border-width: 2px;
 }
-
-.quality {
-  display: block;
-  margin: 0px 20px 20px;
-}
-
 .upvote-default {
   width: 20px;
   float: left;
@@ -284,3 +278,137 @@ section {
   margin-top: 5px;
   margin-left: 5px;
 }
+
+.quality {
+  display: block;
+  margin: 0px 20px 20px;
+}
+
+/* Hidden Menu*/
+i {
+	visibility: hidden;
+}
+
+.mobile-header{
+	visibility: hidden;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 1024px) {
+	body{
+		border-color: magenta;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	body{
+		border-color: green;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+
+@media screen and (max-width: 770px) {
+	body{
+		border-color: blue;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+
+@media screen and (max-width: 670px) {
+	body{
+		border-color: red;
+		border-style: solid;
+		border-width: 3px;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	body{
+		border-color: purple;
+		border-style: solid;
+		border-width: 3px;
+	}
+
+	main{
+		width: 100%;
+    	margin: 0;
+	}
+
+	.inputs{
+		width: 90%;
+		margin: auto;
+	}
+
+	.card-input{
+		width: 100%;
+		height: 100%
+	}
+	.card-input-area{
+		width: 100%;
+    	margin: 0;
+    	z-index: 100000;
+    	padding: 5% 0 20% 0;
+	}
+	.card-display{
+		margin: 10px;
+    	width: 100%;
+    	display: flex;
+    	flex-direction: column;
+
+	}
+
+	.inputs-card-creation{
+		margin: 20px 0px 0px 18px;;
+	}
+
+	.hamburger-menu{
+		visibility: hidden;
+		width: 100vw;
+    	z-index: 100000000;
+    	height: 100vh;
+    	position: fixed;
+    	top: 0;
+	}
+
+	button{
+		max-width: 90%;
+    	margin: auto;
+	}
+
+	.search-form{
+		width: 90%;
+		margin: 7px auto auto auto;
+	}
+
+	i{
+		visibility: visible;
+		display: inline-block;
+		color: #FFFFFF;
+		font-size: 1.5em;
+		margin-left: 20px;
+		position: absolute;
+    	top: 3.5%;
+	}
+
+	#logo{
+		display: inline-block;
+		margin-left: 17%;
+		visibility: visible;
+		position: absolute;
+		left: 15%;
+	}
+
+	.mobile-header{
+		background-color: #1E1D3D;
+		height: 12%;
+		width: 100%;
+		position: fixed;
+		visibility: visible;
+	}
+
+};
