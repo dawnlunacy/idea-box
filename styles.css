@@ -16,6 +16,7 @@ body {
 #body-input {
   height: 85px;
   border-style: solid;
+  border-radius: 3px;
   border-color: #353567;
   border-width: 2px;
   margin-bottom: 20px;
@@ -30,6 +31,7 @@ button {
   font-size: 15px;
   width: 85%;
 }
+
 .search-input {
   height: 40px;
   border-style: solid;
@@ -58,6 +60,7 @@ button {
 
 .card-body {
   padding: 10px;
+  height:48%;
 }
 
 .card-input {
@@ -79,11 +82,47 @@ button {
   height: 75vh;
 }
 
+.card-display {
+  flex-direction: row;
+  align-items: flex-end;
+  margin: 30px;
+}
+
+.card-footer {
+
+}
+
 .card-title {
   color: #1F1F3D;
   font-weight: 700;
   padding: 0px 0px 10px 10px;
   margin: 10px 0px 0px 0px;
+}
+.delete-default {
+  width:20px;
+  float: right;
+}
+
+.delete-active {
+width:20px;
+float:right;
+
+}
+
+.downvote-default {
+  width: 20px;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.downvote-active {
+  display:inline-block;
+  width: 20px;
+  float: right;
+  /*margin-top: 5px;*/
+  /*margin-right: 5px;*/
+
 }
 
 footer {
@@ -126,6 +165,7 @@ h4 {
 
 h5 {
   padding: 10px;
+  width:127px;
 }
 
 header {
@@ -139,18 +179,27 @@ header {
 /*  padding: 20px;
 */}
 
-label{
+.border {
+  border-bottom-color: #353567;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-top-color: #353567;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+label {
   font-weight: 700;
   font-size: 10px;
   display: block; 
   margin: 10px 0px 10px 0px;
 }
 
-#logo{
+#logo {
   margin: 20px 0px 10px 20px;
 }
 
-main{
+main {
   width: 75%;
   margin-left: 25%;
 }
@@ -160,6 +209,10 @@ nav {
   width: 25%;
   height: 125vh;
   position: absolute;
+
+}
+.new-quality-btn{
+  border-radius: 3px;
 }
 
 #new-quality-input{
@@ -167,10 +220,12 @@ nav {
   height: 40px;
   margin: 20px 0px 20px 0px;
   border-style: none;
+  border-radius:3px;
 }
 
-.save-btn{
+.save-btn {
   background-color:#353567;
+  border-radius: 3px;
   width: 100%;
   height:40px;
   margin-bottom: 20px;
@@ -183,42 +238,57 @@ section {
 }
 
 
-.star-active{
+.star-active {
   width:20px;
-
 }
 
-.star-default{
+.star-default {
   width:20px;
   /*background-color: orange;*/
   color:orange;
   /*display:none;*/
-
 }
 
-.starred-ideas-btn{
+.starred-ideas-btn {
   margin:20px;
+  border-radius: 3px;
 }
 
-#starred-ideas-filter{
+#starred-ideas-filter {
   margin: 20px 0px 0px 20px;
 }
 
 #title-input{
   height: 40px;
+  border-radius: 3px;
   border-style: solid;
   border-color: #353567;
   border-width: 2px;
 }
-
-.quality{
-  display: block;
-    margin: 0px 20px 20px;
+.upvote-default {
+  width: 20px;
+  float: left;
+  margin-top: 5px;
+  margin-left: 5px;
 }
+
+.upvote-active {
+  width: 20px;
+  float:left;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.quality {
+  display: block;
+  margin: 0px 20px 20px;
+}
+
 /* Hidden Menu*/
 i {
 	visibility: hidden;
 }
+
 .mobile-header{
 	visibility: hidden;
 }
@@ -231,8 +301,6 @@ i {
 		border-style: solid;
 		border-width: 3px;
 	}
-
-
 }
 
 @media screen and (max-width: 900px) {
@@ -241,7 +309,6 @@ i {
 		border-style: solid;
 		border-width: 3px;
 	}
-
 }
 
 @media screen and (max-width: 770px) {
@@ -344,10 +411,4 @@ i {
 		visibility: visible;
 	}
 
-}
-
-
-
-
-
-
+};
