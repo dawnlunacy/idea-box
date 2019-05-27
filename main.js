@@ -16,19 +16,13 @@ window.addEventListener('load', loadCards)
 saveBtn.addEventListener('click',saveBtnHelper);
 cardDisplayArea.addEventListener('click', cardBtnHelper);
 
-// if(e.target.classList.contains('.star-btn')) {
-//   toggleStar();
-// };
 
-// starBtn.addEventListener('click', starredIdeasBtn)
 
 
 function saveBtnHelper(e) {
   e.preventDefault();
   createIdea(e);
 };
-
-
 
 function createIdea(e) {
   var idea = new Idea(titleInput.value, bodyInput.value, false, 0, Date.now())
@@ -41,15 +35,6 @@ function createIdea(e) {
 };
 
 
-
-// function starredIdeasBtn(e){
-//   e.preventDefault();
-
-// };
-// function newQualityBtn(e){
-//   e.preventDefault();
-
-// };
 function reloadIdeas() {
   if (JSON.parse(localStorage.getItem('ideas')) === null) {
       return;
@@ -68,20 +53,38 @@ function loadCards() {
   };
 };
 
-
 function cardBtnHelper(e) {
-  console.log("FUCKYOU")
-  if (e.target.classList.contains('star-btn')){console.log("DAVID IS THE BEST")
+  if (e.target.classList.contains('star-btn')) {
     toggleStar(e)
+  };
+  if (e.target.classList.contains('delete-btn')) {
+    deleteCardFromDom(e)
   };
 };
 
+function deleteCardFromDom(e) {
+  e.target.closest(".card-display").remove();
+  var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
+  var idea = new Idea;
+  idea.deleteIdea(cardIdentifier)
+  
+
+}
+
+// function starredIdeasBtn(e){
+//   e.preventDefault();
+
+// };
+// function newQualityBtn(e){
+//   e.preventDefault();
+
+// };
+
+
 function toggleStar(e) {
-  console.log("inthestaryo")
   var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
   var targetCard = findIdeaIndex(cardIdentifier);
   targetCard.updateStar();
-  console.log("herrroooo")
     if(targetCard.star) { 
         e.target.setAttribute("src", "images/star-active.svg" );
     } else {
@@ -90,16 +93,10 @@ function toggleStar(e) {
      targetCard.saveToStorage();
 };
 
-
-
 function appendCard({title, body, star, quality, qualitySelect, id}) {
-  // var newCard = new Idea(title, body)
+ 
   var starImg = star ? "images/star-active.svg" : "images/star.svg"
-    // if(star === 'true'){
-    //   return "images/star-active.svg"
-    // } else {
-    //   return "images/star.svg"
-    // };
+  
     console.log(starImg)
   var cardToAppend = 
   `  <article class="card-display" data-id=${id}>
@@ -119,10 +116,6 @@ function appendCard({title, body, star, quality, qualitySelect, id}) {
   </article>`
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
 };
-
-
-
-
 
 function findIdeaIndex(cardId) {
   return ideas.find(function(idea) {
