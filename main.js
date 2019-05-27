@@ -12,24 +12,123 @@ var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
  
 
 window.addEventListener('load', loadCards);
-saveBtn.addEventListener('click',saveBtnHelper)
+saveBtn.addEventListener('click',saveBtnHelper);
+cardDisplayArea.addEventListener('click', cardBtnHelper);
+
+// if(e.target.classList.contains('.star-btn')) {
+//   toggleStar();
+// };
+
 // starBtn.addEventListener('click', starredIdeasBtn)
 
 
-function starredIdeasBtn(e){
+function saveBtnHelper(e) {
   e.preventDefault();
-
-};
-function newQualityBtn(e){
-  e.preventDefault();
-
+  createIdea(e);
 };
 
-function loadCards() {
+
+
+function createIdea(e) {
+  var idea = new Idea(titleInput.value, bodyInput.value, false, 0, Date.now())
+  ideas.push(idea)
+  idea.saveToStorage(ideas)
+  titleInput.value = " ";
+  bodyInput.value = " ";
+  appendCard(idea);
+  console.log(idea)
+};
+
+
+
+// function starredIdeasBtn(e){
+//   e.preventDefault();
+
+// };
+// function newQualityBtn(e){
+//   e.preventDefault();
+
+// };
+
+function loadCards(e) {
   ideas.forEach(function(idea){
     appendCard(idea);
   })
-}
+};
+function cardBtnHelper(e) {
+  console.log("FUCKYOU")
+  if (e.target.classList.contains('star-btn')){console.log("DAVID IS THE BEST")
+    toggleStar(e)
+  };
+};
+
+function toggleStar(e) {
+  console.log("inthestaryo")
+  var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
+  var targetCard = findIdeaIndex(cardIdentifier);
+  targetCard.updateStar();
+  console.log("herrroooo")
+    if(targetCard.star) { 
+        e.target.setAttribute("src", "images/star-active.svg" );
+    } else {
+        e.target.setAttribute("src", "images/star.svg" )
+    };
+     targetCard.saveToStorage();
+};
+
+
+
+function appendCard({title, body, star, quality, qualitySelect, id}) {
+  // var newCard = new Idea(title, body)
+  var starImg = star ? "images/star-active.svg" : "images/star.svg"
+    // if(star === 'true'){
+    //   return "images/star-active.svg"
+    // } else {
+    //   return "images/star.svg"
+    // };
+    console.log(starImg)
+  var cardToAppend = 
+  `  <article class="card-display" data-id=${id}>
+    <body>
+    <header>
+    <input type="image" src=${starImg} class="star-btn" alt="star-button">
+     <input type ="image" src="images/delete.svg" class="delete-btn" alt="delete-button">
+    </header>
+    <h3 class='card-title' contenteditable='true'>${title}</h3>
+      <p class='card-body' contenteditable='true'>${body}</p>
+     <footer class='card-footer'>
+     <input type='image' src='images/upvote.svg' class='upvote-btn' alt='upvote-button'>
+     <h5 class='card-footer-text'>${qualitySelect[quality]}</h5>
+     <input type='image' src='images/downvote.svg' class='downvote-btn' alt='downvote-button'>
+     </footer>
+    </body>
+  </article>`
+  cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
+};
+
+
+
+
+
+function findIdeaIndex(cardId) {
+  return ideas.find(function(idea) {
+    return idea.id == cardId
+  });
+
+
+
+
+
+//then reset the title and body input to an empty string
+//call the function to display your idea on a card and pass through the argument of the variable that is this new instance
+// then disable the save 
+
+// function saveCard(title, body) {
+//   var newCard = new Idea(title, body)
+//   ideas.push(newCard);
+//   newCard.saveToStorage(ideas);
+// };
+
 
 //for delete use filter
 
@@ -57,8 +156,13 @@ function loadCards() {
 // function 
 
 ////**** Will need a function to toggle star 
+
+
+
+
 //e.target.setAttribute(atributeyouwanttochange (src), the things you want to change it to (filepath) )
 //with this function we will need an event listener to listen for when them starimg is clicked
+
 //upon click - toggle imgs  -- see line 60//
     //still need to get this instance of this idea
     //need to match the idea of the card you are on
@@ -82,42 +186,15 @@ function loadCards() {
 
 
 
-function appendCard({title, body, star, quality, qualitySelect, id}) {
-  // var newCard = new Idea(title, body)
-  var starImg = star ? "images/star-active.svg" : "images/star.svg"
-    // if(star === 'true'){
-    //   return "images/star-active.svg"
-    // } else {
-    //   return "images/star.svg"
-    // };
-    console.log(starImg)
-  var cardToAppend = 
-  `  <article class="card-display" data-id=${id}>
-    <body>
-    <header>
-    <input type="image" src=${starImg} class="star-btn" alt="star-button">
-     <input type ='image' src='images/delete.svg' class='delete-btn' alt='delete-button'>
-    </header>
-    <h3 class='card-title' contenteditable='true'>${title}</h3>
-      <p class='card-body' contenteditable='true'>${body}</p>
-     <footer class='card-footer'>
-     <input type='image' src='images/upvote.svg' class='upvote-btn' alt='upvote-button'>
-     <h5 class='card-footer-text'>${qualitySelect[quality]}</h5>
-     <input type='image' src='images/downvote.svg' class='downvote-btn' alt='downvote-button'>
-     </footer>
-    </body>
-  </article>`
-  cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
-};
 
-function saveBtnHelper(e){
-  e.preventDefault();
-  createIdea();
+
+
+
   // var title = titleInput.value;
   // var body = bodyInput.value;
   // appendCard({title, body, star, quality, id});
   // saveCard(title, body)
-}
+
 //upon hitting save button
     //first instantiate an idea
     //pass the arguments for the parameters of that idea. 
@@ -127,34 +204,8 @@ function saveBtnHelper(e){
     //page should not reload
     //idea should be pushed into the array(should persist through page load)
 
-function createIdea(){
-  var idea = new Idea(titleInput.value, bodyInput.value, false, 0, Date.now())
-//instantiate class and pass through arguments for your parameters)
-ideas.push(idea)
-//push that newidea into your array 
-idea.saveToStorage(ideas)
-//store that array
-titleInput.value = " ";
-bodyInput.value = " ";
-appendCard(idea);
-console.log(idea)
-//then reset the title and body input to an empty string
-//call the function to display your idea on a card and pass through the argument of the variable that is this new instance
-// then disable the save 
-
-}
-
-function saveCard(title, body) {
-  var newCard = new Idea(title, body)
-  ideas.push(newCard);
-  newCard.saveToStorage(ideas);
-}
 
 
 
 
-
-
-
-
-
+};
