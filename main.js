@@ -11,7 +11,8 @@ var downvoteBtn =document.querySelector('.downvote-btn')
 var ideas = [];
  
 
-window.addEventListener('load', loadCards);
+window.addEventListener('load', reloadIdeas);
+window.addEventListener('load', loadCards)
 saveBtn.addEventListener('click',saveBtnHelper);
 cardDisplayArea.addEventListener('click', cardBtnHelper);
 
