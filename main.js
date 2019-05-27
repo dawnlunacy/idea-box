@@ -8,7 +8,7 @@ var starBtn = document.querySelector('.star-btn')
 var deleteBtn =document.querySelector('.delete-btn')
 var upvoteBtn =document.querySelector('.upvote-btn')
 var downvoteBtn =document.querySelector('.downvote-btn')
-var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+var ideas = [];
  
 
 window.addEventListener('load', loadCards);
@@ -49,12 +49,25 @@ function createIdea(e) {
 //   e.preventDefault();
 
 // };
+function reloadIdeas() {
+  if (JSON.parse(localStorage.getItem('ideas')) === null) {
+      return;
+  } else {
+    var newIdeas = JSON.parse(localStorage.getItem('ideas')).map(function(array) {
+      return new Idea(array.title, array.body, array.star, array.quality, array.id);
+    });
+    ideas = newIdeas
 
-function loadCards(e) {
-  ideas.forEach(function(idea){
-    appendCard(idea);
-  })
+  };
 };
+
+function loadCards() {
+  for(var i = 0; i < ideas.length; i++) {
+    appendCard(ideas[i])
+  };
+};
+
+
 function cardBtnHelper(e) {
   console.log("FUCKYOU")
   if (e.target.classList.contains('star-btn')){console.log("DAVID IS THE BEST")
