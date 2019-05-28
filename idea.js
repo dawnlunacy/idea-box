@@ -4,8 +4,13 @@ class Idea {
     this.title = title;
     this.body = body;
     this.star = star || false;
-    this.quality = quality || 'Swill';
-    this.id = id || Date.now();
+    this.quality = quality
+    // this instance of quality should be assigned to the parameter of quality 
+    this.qualitySelect = ['Swill', 'Quality', 'Genius'];
+    // should have another key value pair as an array so that you can update by assigning this instance of quality to an index number - allowing you to change the quality based on the index
+    //when you first instatiate the card, it will start at index 0 for the array to display the value swill (pass this as an argument on intial instantiation)
+    //to call that array you index that array with the variable quality in the template literal inside of html in js 
+    this.id = id;
   }
   
     saveToStorage() {
@@ -18,6 +23,10 @@ class Idea {
       parsedIdea[thingToChange] = change;  
       this[thingToChange] = change; 
       this.saveToStorage();
+    }
+
+    updateStar() {
+      this.star = !this.star
     }
 
     deleteIdea() {
