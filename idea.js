@@ -29,9 +29,31 @@ class Idea {
       this.star = !this.star
     }
 
-    deleteIdea() {
-      localStorage.removeItem(this.id);
+    deleteIdea(cardIdentifier) {
+      var updatedIdeas = ideas.filter(function(idea){
+        if (idea.id !== parseInt(cardIdentifier)) {
+          return idea
+        }
+        })
+      ideas = updatedIdeas;
+      this.storeIdea(ideas)
     };
+    
+
+      // })
+      // if(this.id === "data-id") {
+      //   localStorage.removeItem(cardIdentifier);
+      // } else {
+      //   var newIdeas = JSON.parse(localStorage.getItem('ideas')).map(function(array) {
+      //   return new Idea(array.title, array.body, array.star, array.quality, array.id);
+      // });
+      
+    storeIdea(ideas){
+    localStorage.setItem('ideas',JSON.stringify(ideas));
+    };
+
+      
+    
 };
 
 
