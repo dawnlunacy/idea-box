@@ -1,6 +1,7 @@
 var saveBtn = document.querySelector('.save-btn');
 var newQualityBtn = document.querySelector('.new-quality-btn');
 var starredIdeasBtn = document.querySelector('.starred-ideas-btn');
+
 var titleInput = document.querySelector('.title-input')
 var bodyInput = document.querySelector('.body-input')
 var cardDisplayArea = document.querySelector('#card-display-area')
@@ -19,6 +20,26 @@ cardDisplayArea.addEventListener('click', cardBtnHelper);
 // if(e.target.classList.contains('.star-btn')) {
 //   toggleStar();
 // };
+
+// var titleInput = document.querySelector('#title-input');
+// var bodyInput = document.querySelector('#body-input');
+// var cardDisplayArea = document.querySelector('#card-display-area');
+// var starBtn = document.querySelectorAll('.stars');
+// var ideas = JSON.parse(localStorage.getItem('ideas')) || [];
+// var newQualityInput = document.querySelector('#new-quality-input')
+// var hamburgerMenuElements = document.querySelectorAll('.hamburger-menu-element')
+// var hamburgerMenuInactive = document.querySelector('#menu-icon')
+// var mobileMenuToggleStatus = false;
+
+ 
+
+// window.addEventListener('load', loadCards);
+// saveBtn.addEventListener('click', saveBtnHelper);
+// titleInput.addEventListener('keyup', titleHelper);
+// bodyInput.addEventListener('keyup', bodyHelper);
+// newQualityInput.addEventListener('keyup', enableNewQualityBtn);
+// hamburgerMenuInactive.addEventListener('click', activateHamburgerMenu);
+
 
 // starBtn.addEventListener('click', starredIdeasBtn)
 
@@ -217,9 +238,67 @@ function findIdeaIndex(cardId) {
     
     //page should not reload
     //idea should be pushed into the array(should persist through page load)
-
-
-
-
+function titleHelper(){
+	enableSave();
 
 };
+
+function bodyHelper(){
+	enableSave();
+};
+
+function enableSave(){
+	if (titleInput.value === '' || bodyInput.value === ''){
+		saveBtn.disabled = true;
+	} else {
+		saveBtn.disabled = false;
+	}
+}
+
+function clearNewCardFields(){
+	if(saveBtn.disabled = true){
+		titleInput.value = '';
+		bodyInput.value = '';
+	}
+	
+}
+
+function enableNewQualityBtn(){
+	if (newQualityInput.value === '' ){
+		newQualityBtn.disabled = true;
+	} else {
+		newQualityBtn.disabled = false;
+	}
+}
+
+function saveBtnHelper(e){
+	e.preventDefault();
+	var title = titleInput.value;
+	var body = bodyInput.value;
+	appendCard(title, body);
+	saveCard(title, body)
+	clearNewCardFields();
+}
+
+function saveCard(title, body) {
+	var newCard = new Idea(title, body);
+	ideas.push(newCard);
+	newCard.saveToStorage(ideas);
+}
+
+};
+
+function activateHamburgerMenu(){
+	if (mobileMenuToggleStatus === false){
+			for (var i =0; i < hamburgerMenuElements.length; i++){
+				hamburgerMenuElements[i].style.visibility = 'visible'		
+		}
+		mobileMenuToggleStatus = true;
+	} else if (mobileMenuToggleStatus === true){
+		for (var i =0; i < hamburgerMenuElements.length; i++){
+				hamburgerMenuElements[i].style.visibility = 'hidden';
+	}
+		mobileMenuToggleStatus = false;
+}
+}
+
