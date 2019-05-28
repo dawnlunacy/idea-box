@@ -8,34 +8,35 @@
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href= "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   </head>
-<nav class="side-nav">
-  <h1 id="logo">IdeaBox Redux</h1>
-  <!-- <section class="starred-ideas"> -->
+<nav class="side-nav hamburger-menu">
+	<div class="mobile-header"></div>
+		<i class="fas fa-bars" id="menu-icon"></i>
+  		<h1 id="logo">IdeaBox Redux</h1>
     <div class= "border">
-    <h4 id="starred-ideas-filter">Filter Starred Ideas</h4>
-    <button type="submit" class="starred-ideas-btn">Show Starred Ideas</button>
+    <h4 id="starred-ideas-filter" class="hamburger-menu-element">Filter Starred Ideas</h4>
+    <button type="submit" class="btn starred-ideas-btn hamburger-menu">Show Starred Ideas</button>
     </div>
-  <!-- </section> -->
   <section class="quality">
-    <h4>Filter by Quality</h4>
-    <h3 class="hover-orange">Swill</h3>
-    <h3 class="hover-orange">Plausible</h3>
-    <h3 class="hover-orange">Genius</h3>
-    <form>
-      <h4>New Quality</h4>
-      <input type="text" class="new-quality-input" aria-required="true">
-      <button type="submit" class="new-quality-btn">Add New Quality</button>
+    <h4 class="hamburger-menu-element">Filter by Quality</h4>
+    <h3 class="hover-orange hamburger-menu-element">Swill</h3>
+    <h3 class="hover-orange hamburger-menu-element">Plausible</h3>
+    <h3 class="hover-orange hamburger-menu-element">Genius</h3>
+    <form class="hamburger-menu-element">
+      <h4 class="hamburger-menu-element">New Quality</h4>
+      <input type="text" class="inputs hamburger-menu-element" id="new-quality-input" aria-required="true">
+      <button type="submit" class="hamburger-menu-element new-quality-btn" disabled>Add New Quality</button>
     </form>
   </section>
 </nav>
 <main class="card-input-area">
   <form class="card-input">
-    <label for="title-input">Title</label>
-    <input type="text" class="title-input" aria-required="true">
-    <label for="body-input">Body</label>
-    <textarea type="text" class="body-input" aria-require="true"></textarea>
-    <button type="submit" class="save-btn">Save</button>
+    <label for="title-input" class="inputs-card-creation">Title</label>
+    <input type="text" class="inputs" id="title-input" aria-required="true">
+    <label for="body-input" class="inputs-card-creation">Body</label>
+    <textarea type="text" class="inputs" id="body-input" aria-require="true"></textarea>
+    <button type="submit" class="save-btn" disabled>Save</button>
   </form>
   <form class="search-form">
     <img src="images/search.svg" class="search-img">
