@@ -35,7 +35,8 @@ button {
   padding: 10px;
   font-weight: 700;
   font-size: 15px;
-  width: 85%;
+  width: 90%;
+  border-radius: 3px
 }
 
 .search-input {
@@ -210,7 +211,7 @@ nav {
 }
 
 #new-quality-input {
-  width: 85%;
+  width: 90%;
   height: 40px;
   margin: 20px 0px 20px 0px;
   border-style: none;
@@ -347,11 +348,13 @@ i {
        height: 100vh;
        position: fixed;
        top: 0;
+       background-color: #1E1D3D;
     }
 
     button {
        max-width: 90%;
        margin: auto;
+       border-radius: 3px
     }
 
     .search-form {
