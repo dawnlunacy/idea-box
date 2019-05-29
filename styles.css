@@ -11,8 +11,11 @@ article {
 
 body {
   font-family: open sans;
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-areas:
+  "nav topSection"
+  "nav bottomSection";
+  grid-template-columns:25% 75%;
   height: 100vh;
 }
 
@@ -75,21 +78,21 @@ button {
 }
 
 .card-input-area {
+  grid-area: topSection;
   background-color: #A9AAD2;
 }
 
 #card-display-area {
-  background-color: #EAEAF4;
-  display: flex;
-  justify-content: flex-end;
-  /*change justify-content:flex-start;*/
-  height: 75vh;
+ grid-area: bottomSection;
+ display:grid;
+ grid-template-columns: 24% 24% 24% 24%;
+ grid-gap: 10px 10px;
+ grid-template-rows: repeat(3,1fr);
+ padding: 20px;
 }
 
 .card-display {
-  flex-direction: row;
-  align-items: flex-end;
-  margin: 30px;
+  margin: 15px;
 }
 
 .card-title {
@@ -186,15 +189,11 @@ label {
   margin: 20px 0px 10px 20px;
 }
 
-main {
-  width: 75%;
-  margin-left: 25%;
-}
-
 nav {
+  grid-area: nav;
   background-color: #1F1F3D;
   width: 25%;
-  height: 125vh;
+  height: 200vh;
   position: absolute;
 }
 
@@ -218,11 +217,11 @@ nav {
   margin-bottom: 20px;
 }
 
-section {
+/*section {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-}
+}*/
 
 
 .star-btn{
