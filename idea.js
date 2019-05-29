@@ -11,8 +11,8 @@ class Idea {
     saveToStorage(array) {
       localStorage.setItem('ideas', JSON.stringify(array));
     };
-
-    updateIdea(thingToChange, change) {
+    
+    updateIdea(cardToUpdate, updatedContent) {
       var retrieveIdea = localStorage.getItem(this.id);
       var parsedIdea = JSON.parse(retrieveIdea);
       parsedIdea[thingToChange] = change;  

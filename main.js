@@ -12,9 +12,10 @@ var downvoteBtn =document.querySelector('.downvote-btn')
 var hamburgerMenuElements = document.querySelectorAll('.hamburger-menu-element')
 var hamburgerMenuInactive = document.querySelector('#menu-icon')
 var mobileMenuToggleStatus = false;
-var ideas = [];
- 
+// var singleCardDisplay = document.querySelector('.card-display')
+var ideas = []; 
 
+ 
 window.addEventListener('load', reloadIdeas);
 window.addEventListener('load', loadCards)
 saveBtn.addEventListener('click',saveBtnHelper);
@@ -23,6 +24,7 @@ titleInput.addEventListener('keyup', enableSave);
 bodyInput.addEventListener('keyup', enableSave);
 newQualityInput.addEventListener('keyup', enableNewQualityBtn);
 hamburgerMenuInactive.addEventListener('click', activateHamburgerMenu);
+cardDisplayArea.addEventListener('focusout', updateCard);
 
 function enableSave() {
     if (titleInput.value === '' || bodyInput.value === ''){
@@ -155,4 +157,25 @@ function appendCard({title, body, star, quality, qualitySelect, id}) {
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
 };
 
+
+function updateTitle(index, update){
+  console.log('hi')
+  ideas.targetCard.cardTitle = cardEdited.innerText
+  ideas.targetCard.updateIdea(ideas.targetCard.cardTitle, ideas.targetCard.cardEdited.innerText)
+};
+
+function updateBody(index, update){
+  ideas.targetCard.cardBody = cardEdited.innerText
+};
+
+function updateCard(e){
+  var cardEdited = e.target.closest(".card-display").getAttribute("data-id");
+  var targetCard = findIdeaIndex(cardEdited);//Not getting into our if statement, but working until this point.
+  if (cardEdited.className === "card-title"){
+      updateTitle(targetCard, cardEdited);
+        }
+  if (targetCard.className === "card-body"){
+      updateTitle(targetCard, cardEdited);
+  }
+}
 
