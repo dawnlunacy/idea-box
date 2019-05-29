@@ -156,3 +156,6 @@ function appendCard({title, body, star, quality, qualitySelect, id}) {
 };
 
 
+//psuedocode for editing content -
+// on update card- event-  var editedITem = e.target - var index = getcardid(e)- of edited item = title or body then update it with parameters 
+
