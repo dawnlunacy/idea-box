@@ -141,6 +141,7 @@ h3 {
   font-size: 15px;
   color: #FFFFFF;
   margin: 20px 0px 20px 0px;
+  width: 100%;
 }
 
 h4 {
@@ -164,6 +165,10 @@ header {
 
 .hover-orange:hover {
   background-color: #D14119;
+  border-left: 10px solid #F58E72;
+  padding: 15px;
+  position: relative;
+  right: 20px;
 }
 
 .border {
