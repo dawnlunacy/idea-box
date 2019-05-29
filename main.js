@@ -12,7 +12,6 @@ var downvoteBtn =document.querySelector('.downvote-btn')
 var hamburgerMenuElements = document.querySelectorAll('.hamburger-menu-element')
 var hamburgerMenuInactive = document.querySelector('#menu-icon')
 var mobileMenuToggleStatus = false;
-// var singleCardDisplay = document.querySelector('.card-display')
 var ideas = []; 
 
  
@@ -108,14 +107,6 @@ function activateHamburgerMenu() {
     }
 };
 
-// function starredIdeasBtn(e){
-//   e.preventDefault();
-
-// };
-// function newQualityBtn(e){
-//   e.preventDefault();
-
-// };
 
 function findIdeaIndex(cardId) {
   return ideas.find(function(idea) {
@@ -130,15 +121,17 @@ function getIdeafromArray(e) {
 }
 
 function toggleStar(e) {
-  var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
-  var targetCard = findIdeaId(cardIdentifier);
-  targetCard.updateStar();
-    if(targetCard.star) { 
-        e.target.setAttribute("src", "images/star-active.svg" );
-    } else {
+  if (e.target.className === "star-btn"){
+    var fetchCard = getIdeafromArray(e); 
+  } 
+  fetchCard.updateStar();
+
+  if(fetchCard.star) { 
+      e.target.setAttribute("src", "images/star-active.svg" );
+   } else {
         e.target.setAttribute("src", "images/star.svg" )
-    };
-     targetCard.saveToStorage(ideas);
+  };
+    fetchCard.saveToStorage(ideas);
 };
 
 function appendCard({title, body, star, quality, qualitySelect, id}) {
