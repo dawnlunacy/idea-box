@@ -57,10 +57,10 @@ button {
 }
 
 #card-display-area {
- grid-area: bottomSection;
  display:grid;
- grid-template-columns: 25% 25% 25%;
+ grid-area: bottomSection;
  grid-gap: 35px 35px;
+ grid-template-columns: 25% 25% 25%;
  grid-template-rows: repeat(3,1fr);
  justify-content: center;
  padding: 20px;
@@ -74,31 +74,31 @@ button {
 .card-title {
   color: #1F1F3D;
   font-weight: 700;
-  padding: 0px 0px 10px 10px;
   margin: 10px 0px 0px 0px;
+  padding: 0px 0px 10px 10px;
 }
 
 .delete-btn {
-  width:20px;
   float:right;
+  width:20px;
 }
 
 .downvote-btn {
-  width:20px;
   float:right;
+  width:20px;
 }
 
 footer {
   background-color: #3536A4;
   color: #FFFFFF;
-  font-weight: 700;
-  font-size: 12px;    
-  text-align: center;
-  height: 30px;
-  width:100%;
   display:flex;
+  font-size: 12px;    
+  font-weight: 700;
+  height: 30px;
   justify-content: space-between;
   margin-top:17px;
+  text-align: center;
+  width:100%;
 }
 
 .search-form {
@@ -109,34 +109,34 @@ footer {
 }
 
 .hidden-msg {
-  text-align:left;
-  font-family: Courier;
   color: #581845 ;
+  font-family: Courier;
   font-size:35px;
-  width:250px;
   margin: 0 auto;
+  text-align:left;
+  width:250px;
 }
 
 h1 {
-  font-weight: 700;
   color: #FFFFFF;
   font-size: 17px;
+  font-weight: 700;
   padding-bottom: 20px;
 }
 
 h3 {
-  font-weight: 400;
-  font-size: 15px;
   color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 400;
   margin: 20px 0px 20px 0px;
   width: 100%
 }
 
 h4 {
-  font-weight: 700;
-  font-size: 10px;
   color: #BFBFFD;
   display: block;
+  font-size: 10px;
+  font-weight: 700;
   margin-top: 20px;
 }
 
@@ -147,8 +147,8 @@ h5 {
 
 header {
   background-color: #353567;
-  width:100%;
   height: 20px;
+  width:100%;
 }
 
 .hover-orange:hover {
@@ -162,17 +162,17 @@ header {
 
 .border {
   border-bottom-color: #353567;
-  border-bottom-width: 1px;
   border-bottom-style: solid;
+  border-bottom-width: 1px;
   border-top-color: #353567;
-  border-top-width: 1px;
   border-top-style: solid;
+  border-top-width: 1px;
 }
 
 label {
-  font-weight: 700;
-  font-size: 10px;
   display: block; 
+  font-size: 10px;
+  font-weight: 700;
   margin: 10px 0px 10px 0px;
 }
 
@@ -181,11 +181,11 @@ label {
 }
 
 nav {
-  grid-area: nav;
   background-color: #1F1F3D;
-  width: 25%;
+  grid-area: nav;
   height: 200vh;
   position: absolute;
+  width: 25%;
 }
 
 .new-quality-btn {
@@ -193,56 +193,56 @@ nav {
 }
 
 #new-quality-input {
-  width: 90%;
+  border-radius:3px;
+  border-style: none;
   height: 40px;
   margin: 20px 0px 20px 0px;
-  border-style: none;
-  border-radius:3px;
+  width: 90%;
 }
 
 .save-btn {
   background-color:#353567;
   border-radius: 3px;
-  width: 100%;
   height:40px;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .search-input {
-  height: 40px;
-  border-style: solid;
-  border-color: #353567;
-  border-width: 2px;
-  font-size: 14px;
-  margin-left: 40px;
-  margin-bottom:15px;
-  border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  font-weight: 300;
+  border-color: #353567;
+  border-style: solid;
+  border-top-right-radius: 5px;
+  border-width: 2px;
   color: #1f1f3b;
+  font-size: 14px;
+  font-weight: 300;
+  height: 40px;
+  margin-bottom:15px;
+  margin-left: 40px;
 }
 
 .search-img {
-  width:40px;
+  background-color: #1f1f3b;
   background-color:#353567;
-  position: absolute;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
   color: #ffffff;
   cursor: pointer;
   font-size: 20px;
   padding: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background-color: #1f1f3b;
+  position: absolute;
+  width:40px;
 }
 
 .star-btn {
-  width:20px;
   float:left;
+  width:20px;
 }
 
 .starred-ideas-btn {
-  margin:20px;
   border-radius: 3px;
+  margin:20px;
   width: 85%;
 }
 
@@ -251,11 +251,11 @@ nav {
 }
 
 #title-input {
-  height: 40px;
+  border-color: #353567;
   border-radius: 3px;
   border-style: solid;
-  border-color: #353567;
   border-width: 2px;
+  height: 40px;
 }
 
 .quality {
@@ -264,8 +264,8 @@ nav {
 }
 
 .upvote-btn {
-  width:20px;
   float:left;
+  width:20px;
 }
 
 /*Hidden Menu*/
