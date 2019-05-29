@@ -1,5 +1,5 @@
 class Idea {
-  constructor(title, body, star, quality, id){
+  constructor(title, body, star, quality, id) {
     this.title = title;
     this.body = body;
     this.star = star || false;
@@ -31,7 +31,7 @@ class Idea {
       this.storeIdea(ideas)
     };
       
-    storeIdea(ideas){
+    storeIdea(ideas) {
     localStorage.setItem('ideas',JSON.stringify(ideas));
     };
 };
