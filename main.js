@@ -12,9 +12,10 @@ var downvoteBtn =document.querySelector('.downvote-btn')
 var hamburgerMenuElements = document.querySelectorAll('.hamburger-menu-element')
 var hamburgerMenuInactive = document.querySelector('#menu-icon')
 var mobileMenuToggleStatus = false;
-var ideas = [];
- 
+// var singleCardDisplay = document.querySelector('.card-display')
+var ideas = []; 
 
+ 
 window.addEventListener('load', reloadIdeas);
 window.addEventListener('load', loadCards)
 saveBtn.addEventListener('click',saveBtnHelper);
@@ -23,6 +24,7 @@ titleInput.addEventListener('keyup', enableSave);
 bodyInput.addEventListener('keyup', enableSave);
 newQualityInput.addEventListener('keyup', enableNewQualityBtn);
 hamburgerMenuInactive.addEventListener('click', activateHamburgerMenu);
+cardDisplayArea.addEventListener('focusout', updateCard);
 
 function enableSave() {
     if (titleInput.value === '' || bodyInput.value === ''){
@@ -121,9 +123,15 @@ function findIdeaIndex(cardId) {
   });
 };
 
+function getIdeafromArray(e) {
+ var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
+ var targetCard = findIdeaIndex(cardIdentifier);
+ return targetCard;
+}
+
 function toggleStar(e) {
   var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
-  var targetCard = findIdeaIndex(cardIdentifier);
+  var targetCard = findIdeaId(cardIdentifier);
   targetCard.updateStar();
     if(targetCard.star) { 
         e.target.setAttribute("src", "images/star-active.svg" );
@@ -156,6 +164,17 @@ function appendCard({title, body, star, quality, qualitySelect, id}) {
 };
 
 
-//psuedocode for editing content -
-// on update card- event-  var editedITem = e.target - var index = getcardid(e)- of edited item = title or body then update it with parameters 
+function updateCard(e){
+  if (e.target.className === "card-title" || e.target.className === "card-body") {
+      var titleText = e.target.closest(".card-display").querySelector(".card-title").innerText
+      var bodyText = e.target.closest(".card-display").querySelector(".card-body").innerText
+    }
+      var fetchCard = getIdeafromArray(e);
+      console.log(fetchCard)
+      fetchCard.updateIdea(titleText, bodyText);
+      fetchCard.saveToStorage(ideas);
+    }
+
+
+
 

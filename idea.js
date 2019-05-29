@@ -11,13 +11,10 @@ class Idea {
     saveToStorage(array) {
       localStorage.setItem('ideas', JSON.stringify(array));
     };
-
-    updateIdea(thingToChange, change) {
-      var retrieveIdea = localStorage.getItem(this.id);
-      var parsedIdea = JSON.parse(retrieveIdea);
-      parsedIdea[thingToChange] = change;  
-      this[thingToChange] = change; 
-      this.saveToStorage();
+    
+    updateIdea(titleText, bodyText) {
+      this.title = titleText
+      this.body = bodyText
     };
 
     updateStar() {
