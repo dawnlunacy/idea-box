@@ -12,7 +12,7 @@ IdeaBox Repository for Lacy and Ayla
 
 ## Learning Goals for IdeaBox:
 
--Continue to improve on building responsive client-side applications with good user feedback<br
+-Continue to improve on building responsive client-side applications with good user feedback<br>
 -Understand how to implement client-side data persistence using localStorage<br>
 -Understand what it looks like to have a separate data model (using a class) and dom model<br>
 -Understand how to utilize data-* attributes<br>
@@ -21,11 +21,11 @@ IdeaBox Repository for Lacy and Ayla
 
 ## What We Gained From This Project:
 
--We now have a deeper understanding of vanilla javascript, and how to interact with the DOM, using JS.
--We understand how to save to localStorage and pull from local storage on page load. 
--We have a better understanding of data-* attributes.
--A much deeper understanding arrays. 
--We have a better understanding of time managemnet in relation to agile workflow and have a deeper understanding of our personal workflow. 
+-We now have a deeper understanding of vanilla javascript, and how to interact with the DOM, using JS.<br>
+-We understand how to save to localStorage and pull from local storage on page load. <br>
+-We have a better understanding of data-* attributes.<br>
+-A much deeper understanding arrays. <br>
+-We have a better understanding of time managemnet in relation to agile workflow and have a deeper understanding of our personal workflow. <br>
 
 
 ##Desktop Comp:
