@@ -91,6 +91,7 @@ button {
  grid-template-rows: repeat(3,1fr);
  justify-content: center;
  padding: 20px;
+/* color: #FFFFFF;*/
 }
 /*note on css- perhaps change the grid-gab for media queries? */
 
@@ -240,6 +241,9 @@ nav {
 #starred-ideas-filter {
   margin: 20px 0px 0px 20px;
 }
+#toggle{
+  visibility: hidden;
+}
 
 #title-input {
   height: 40px;
@@ -259,118 +263,46 @@ nav {
   float:left;
 }
 
-/*Hidden Menu*/
-i {
-    visibility: hidden;
-}
-
-.mobile-header{
-    visibility: hidden;
-}
-
 /*Media Queries*/
 
-@media screen and (max-width: 1024px) {
-    body{
-        border-color: magenta;
-        border-style: solid;
-        border-width: 3px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    body{
-        border-color: green;
-        border-style: solid;
-        border-width: 3px;
-    }
-}
-
 @media screen and (max-width: 770px) {
-    body{
-        border-color: blue;
-        border-style: solid;
-        border-width: 3px;
+    
+    .starred-ideas-btn{
+      max-width: 80%
+    }
+    #logo{
+      line-height: 25px;
     }
 }
 
 @media screen and (max-width: 670px) {
-    body{
-        border-color: red;
-        border-style: solid;
-        border-width: 3px;
+    
+    .starred-ideas-btn{
+      width: 75%
     }
 }
 
 @media screen and (max-width: 550px) {
-    body{
-        border-color: purple;
-        border-style: solid;
-        border-width: 3px;
-    }
-
-    main{
-       width: 100%;
-       margin: 0;
-    }
-
-    .inputs {
-        width: 90%;
-        margin: auto;
-    }
 
     .card-input {
-        width: 100%;
-        height: 100%
+      width: 75%;
+    }
+    .card-input-area{
+      grid-area: topSection;
+      background-color: #A9AAD2;
+      position: absolute;
+      width: 100%;
+      top: 7%;
+      z-index: -1;
     }
 
-    .card-input-area {
-        width: 100%;
-       margin: 0;
-       z-index: 100000;
-       padding: 5% 0 20% 0;
-    }
-
-    .card-display {
-       margin: 10px;
-       width: 100%;
-       display: flex;
-       flex-direction: column;
-    }
-
-    .inputs-card-creation {
-        margin: 20px 0px 0px 18px;;
-    }
-
-    .hamburger-menu {
-       visibility: hidden;
-       width: 100vw;
-       z-index: 100000000;
-       height: 100vh;
-       position: fixed;
-       top: 0;
-       background-color: #1E1D3D;
-    }
-
-    button {
-       max-width: 90%;
-       margin: auto;
-       border-radius: 3px
-    }
-
-    .search-form {
-        width: 90%;
-        margin: 7px auto auto auto;
-    }
-
-    i {
-        visibility: visible;
-        display: inline-block;
-        color: #FFFFFF;
-        font-size: 1.5em;
-        margin-left: 20px;
-        position: absolute;
-        top: 3.5%;
+    #card-display-area{
+      display: grid;
+      grid-template-columns: 90%;
+      position: absolute;
+      margin: 55vh 0 0 5%;
+      width: 90%;
+      z-index: -22;
     }
 
     #logo {
@@ -381,13 +313,84 @@ i {
         left: 15%;
     }
 
-    .mobile-header {
-        background-color: #1E1D3D;
-        height: 12%;
-        width: 100%;
-        position: fixed;
-        visibility: visible;
+    .search-form{
+      width: 75%;
     }
 
-};
+    .overlay {
+     background-color: #201f3d;
+     position: absolute;
+     z-index: 1;
+     width: 100vw;
+     height: 50px;
+    }
+
+    .overlay > label {
+     cursor: pointer;
+     display: block;
+     position: relative;
+     left: 20px;
+     width: 30px;
+     height: 20px;
+     border-top: 2px solid white;
+     border-bottom: 2px solid white;
+     float: left;
+     margin-top: 20px;
+    }
+
+    .overlay > label::before {
+     content: '';
+     display: block;
+     position: relative;
+     top: 7px;
+     border-top: 2px solid white;
+    }
+
+    .verticalNav {
+     background-color: #201f3d;
+     position: relative;
+     top: -450px;
+     height: 500px;
+     padding-top: 20px;
+     font-size: 22px;
+     box-sizing: border-box;
+     transition: top 600ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+     width: 100%;
+    }
+
+    .verticalNav a {
+     display: block;
+     color: white;
+     font-weight: 100;
+     padding-left: 5%;
+     margin-top: 20px;
+     text-decoration: none;
+    }
+
+    .verticalNav a:hover {
+     width: 100%;
+     background-color: #d14119;
+    }
+
+    #toggle {
+     position: absolute;
+     visibility: hidden;
+    }
+
+    #toggle:checked ~ .verticalNav {
+     top: 40px;
+    }
+
+    #toggle:checked {
+     margin-top: 135px;
+    }
+    nav{
+      width: 100vw;
+      height: 9vh;
+    }
+    .starred-ideas-btn{
+      width: 100%;
+    }
+
+    };
 
