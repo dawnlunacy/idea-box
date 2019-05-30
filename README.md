@@ -40,6 +40,7 @@ IdeaBox Repository for Lacy and Ayla
 ![screencapture-file-Users-ayla-idea-box-index-html-2019-05-29-19_08_01](https://user-images.githubusercontent.com/47537744/58607605-86ffef00-825d-11e9-8c9b-fc04ff98b26f.png)
 
 ## Mobile Comp:
+<img width="310" alt="Screen Shot 2019-05-29 at 10 12 54 PM" src="https://user-images.githubusercontent.com/47537744/58608048-09d57980-825f-11e9-9c5b-5dd1c81aa9d4.png">
 
 
 ## Our Mobile Comp:
