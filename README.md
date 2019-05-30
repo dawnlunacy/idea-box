@@ -4,10 +4,10 @@ IdeaBox Repository for Lacy and Ayla
 
 
 ## This Project Utilizes:
--HTML
--CSS
--Vanilla Javascript (ES5)
--Local Storage
+-HTML<br>
+-CSS<br>
+-Vanilla Javascript (ES5)<br>
+-Local Storage<br>
 
 
 ## Learning Goals for IdeaBox:
