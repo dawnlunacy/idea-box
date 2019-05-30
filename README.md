@@ -37,12 +37,10 @@ IdeaBox Repository for Lacy and Ayla
 
 
 ## Our Desktop Comp with ideas creadted:
-![](https://files.slack.com/files-pri/T029P2S9M-FK5NK99E3/screencapture-file-users-ayla-idea-box-index-html-2019-05-29-19_08_01.png)
+![screencapture-file-Users-ayla-idea-box-index-html-2019-05-29-19_08_01](https://user-images.githubusercontent.com/47537744/58607605-86ffef00-825d-11e9-8c9b-fc04ff98b26f.png)
 
 ## Mobile Comp:
 
 
 ## Our Mobile Comp:
-![ScreenShot](https://files.slack.com/files-pri/T029P2S9M-FK3SP3SUV/screen_shot_2019-05-29_at_6.53.34_pm.png)
-![](https://files.slack.com/files-pri/T029P2S9M-FK3SP50S1/screen_shot_2019-05-29_at_6.53.27_pm.png)
 
