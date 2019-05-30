@@ -28,15 +28,21 @@ IdeaBox Repository for Lacy and Ayla
 -We have a better understanding of time managemnet in relation to agile workflow and have a deeper understanding of our personal workflow. <br>
 
 
-##Desktop Comp:
+## Desktop Comp:
 
 
 
-##Our Desktop Comp with no ideas created:
+## Our Desktop Comp with no ideas created:
+![](https://files.slack.com/files-pri/T029P2S9M-FK3C9BZMJ/screencapture-file-users-ayla-idea-box-index-html-2019-05-29-19_07_14.png)
+
 
 ## Our Desktop Comp with ideas creadted:
+![](https://files.slack.com/files-pri/T029P2S9M-FK5NK99E3/screencapture-file-users-ayla-idea-box-index-html-2019-05-29-19_08_01.png)
 
-##Mobile Comp:
+## Mobile Comp:
 
-##Our Mobile Comp:
+
+## Our Mobile Comp:
+![](https://files.slack.com/files-pri/T029P2S9M-FK3SP3SUV/screen_shot_2019-05-29_at_6.53.34_pm.png)
+![](https://files.slack.com/files-pri/T029P2S9M-FK3SP50S1/screen_shot_2019-05-29_at_6.53.27_pm.png)
 
