@@ -43,6 +43,6 @@ IdeaBox Repository for Lacy and Ayla
 
 
 ## Our Mobile Comp:
-![](https://files.slack.com/files-pri/T029P2S9M-FK3SP3SUV/screen_shot_2019-05-29_at_6.53.34_pm.png)
+![ScreenShot](https://files.slack.com/files-pri/T029P2S9M-FK3SP3SUV/screen_shot_2019-05-29_at_6.53.34_pm.png)
 ![](https://files.slack.com/files-pri/T029P2S9M-FK3SP50S1/screen_shot_2019-05-29_at_6.53.27_pm.png)
 
