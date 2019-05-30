@@ -155,4 +155,6 @@ function updateCardEnter(e){
       fetchCard.updateIdea(titleText, bodyText);
       fetchCard.saveToStorage(ideas);
   };
+
 };
+
