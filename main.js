@@ -9,6 +9,7 @@ var starBtn = document.querySelector('.star-btn')
 var deleteBtn =document.querySelector('.delete-btn')
 var upvoteBtn =document.querySelector('.upvote-btn')
 var downvoteBtn =document.querySelector('.downvote-btn')
+var hiddenMsg =document.querySelector('.hidden-msg')
 var hamburgerMenuElements = document.querySelectorAll('.hamburger-menu-element')
 var hamburgerMenuInactive = document.querySelector('#menu-icon')
 var mobileMenuToggleStatus = false;
@@ -17,6 +18,7 @@ var ideas = [];
  
 window.addEventListener('load', reloadIdeas);
 window.addEventListener('load', loadCards)
+window.addEventListener('load', toggleHiddenMsg)
 saveBtn.addEventListener('click',saveBtnHelper);
 cardDisplayArea.addEventListener('click', cardBtnHelper);
 titleInput.addEventListener('keyup', enableSave);
@@ -24,6 +26,14 @@ bodyInput.addEventListener('keyup', enableSave);
 newQualityInput.addEventListener('keyup', enableNewQualityBtn);
 hamburgerMenuInactive.addEventListener('click', activateHamburgerMenu);
 cardDisplayArea.addEventListener('focusout', updateCard);
+
+function toggleHiddenMsg() {
+  if (ideas.length === 0) {
+    hiddenMsg.innerText = "You are looking beautiful today! Anything on your mind? Create ideas above!"
+    } else {
+      hiddenMsg.innerText = " "
+    }
+}
 
 function enableSave() {
     if (titleInput.value === '' || bodyInput.value === ''){
@@ -62,12 +72,13 @@ function reloadIdeas() {
     newIdeas.push(newIdea);
   });
   ideas = newIdeas;
+  toggleHiddenMsg();
 };
 
 function loadCards() {
   for(var i = 0; i < ideas.length; i++) {
     appendCard(ideas[i])
-  };
+  }; 
 };
 
 function cardBtnHelper(e) {
@@ -84,7 +95,9 @@ function deleteCardFromDom(e) {
   var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
   var idea = new Idea;
   idea.deleteIdea(cardIdentifier)
+  toggleHiddenMsg();
 }
+
 function enableNewQualityBtn() {
     if (newQualityInput.value === '' ){
         newQualityBtn.disabled = true;
@@ -154,6 +167,7 @@ function appendCard({title, body, star, quality, qualitySelect, id}) {
     </body>
   </article>`
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
+  toggleHiddenMsg();
 };
 
 

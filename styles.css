@@ -10,8 +10,8 @@ article {
 }
 
 body {
-  font-family: open sans;
   display: grid;
+  font-family: open sans;
   grid-template-areas:
   "nav topSection"
   "nav bottomSection";
@@ -20,55 +20,28 @@ body {
 }
 
 #body-input {
-  height: 85px;
-  border-style: solid;
-  border-radius: 3px;
   border-color: #353567;
+  border-radius: 3px;
+  border-style: solid;
   border-width: 2px;
+  height: 85px;
   margin-bottom: 20px;
 }
 
 button {
   background-color: #5356A4;
-  color: #E9E9F3;
+  border-radius: 3px;
   border-style: none;
-  padding: 10px;
-  font-weight: 700;
+  color: #E9E9F3;
   font-size: 15px;
+  font-weight: 700;
+  padding: 10px;
   width: 90%;
-  border-radius: 3px
-}
-
-.search-input {
-  height: 40px;
-  border-style: solid;
-  border-color: #353567;
-  border-width: 2px;
-  font-size: 14px;
-  margin-left: 40px;
-  margin-bottom:15px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  font-weight: 300;
-  color: #1f1f3b;
-}
-
-.search-img {
-  width:40px;
-  background-color:#353567;
-  position: absolute;
-  color: #ffffff;
-  cursor: pointer;
-  font-size: 20px;
-  padding: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  background-color: #1f1f3b;
 }
 
 .card-body {
-  padding: 10px;
   height:48%;
+  padding: 10px;
 }
 
 .card-input {
@@ -79,8 +52,8 @@ button {
 }
 
 .card-input-area {
-  grid-area: topSection;
   background-color: #A9AAD2;
+  grid-area: topSection;
 }
 
 #card-display-area {
@@ -133,6 +106,15 @@ footer {
   flex-direction: column;
   margin: auto;
   width: 50%;
+}
+
+.hidden-msg {
+  text-align:left;
+  font-family: Courier;
+  color: #581845 ;
+  font-size:35px;
+  width:250px;
+  margin: 0 auto;
 }
 
 h1 {
@@ -224,6 +206,33 @@ nav {
   width: 100%;
   height:40px;
   margin-bottom: 20px;
+}
+
+.search-input {
+  height: 40px;
+  border-style: solid;
+  border-color: #353567;
+  border-width: 2px;
+  font-size: 14px;
+  margin-left: 40px;
+  margin-bottom:15px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-weight: 300;
+  color: #1f1f3b;
+}
+
+.search-img {
+  width:40px;
+  background-color:#353567;
+  position: absolute;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #1f1f3b;
 }
 
 .star-btn {
