@@ -29,8 +29,7 @@ IdeaBox Repository for Lacy and Ayla
 
 
 ## Desktop Comp:
-
-
+<img width="601" alt="Screen Shot 2019-05-29 at 10 10 08 PM" src="https://user-images.githubusercontent.com/47537744/58608138-6cc71080-825f-11e9-83c6-28ee3aaf7c01.png">
 
 ## Our Desktop Comp with no ideas created:
 ![screencapture-file-Users-ayla-idea-box-index-html-2019-05-29-19_07_14](https://user-images.githubusercontent.com/47537744/58607768-173e3400-825e-11e9-9fbb-88be103ecdbf.png)
