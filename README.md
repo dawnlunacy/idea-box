@@ -12,12 +12,12 @@ IdeaBox Repository for Lacy and Ayla
 
 ## Learning Goals for IdeaBox:
 
--Continue to improve on building responsive client-side applications with good user feedback
--Understand how to implement client-side data persistence using localStorage
--Understand what it looks like to have a separate data model (using a class) and dom model
--Understand how to utilize data-* attributes
--Understand how to incorporate & iterate over arrays in order to filter what is being displayed
--Understand how to craft code with clean style, using small functions that show trends toward DRYness and SRP
+-Continue to improve on building responsive client-side applications with good user feedback<hr>
+-Understand how to implement client-side data persistence using localStorage<hr>
+-Understand what it looks like to have a separate data model (using a class) and dom model<hr>
+-Understand how to utilize data-* attributes<hr>  
+-Understand how to incorporate & iterate over arrays in order to filter what is being displayed<hr>
+-Understand how to craft code with clean style, using small functions that show trends toward DRYness and SRP<hr>
 
 ## What We Gained From This Project:
 
