@@ -31,6 +31,7 @@ function toggleHiddenMsg() {
       hiddenMsg.innerText = " ";
     };
 };
+
 function enableSave() {
     if (titleInput.value === '' || bodyInput.value === ''){
         saveBtn.disabled = true;
@@ -38,24 +39,27 @@ function enableSave() {
         saveBtn.disabled = false;
     };
 };
+
 function clearNewCardFields() {
     if(saveBtn.disabled = true){
         titleInput.value = '';
         bodyInput.value = '';
     };
 };
+
 function saveBtnHelper(e) {
   e.preventDefault();
   createIdea(e);
 };
+
 function createIdea(e) {
   var idea = new Idea(titleInput.value, bodyInput.value, false, 0, Date.now())
   ideas.push(idea)
   idea.saveToStorage(ideas)
   clearNewCardFields();
   appendCard(idea);
-  console.log(idea);
 };
+
 function reloadIdeas() {
   var newIdeas = [];
   var oldIdeas = JSON.parse(localStorage.getItem('ideas'));
@@ -66,11 +70,13 @@ function reloadIdeas() {
   ideas = newIdeas;
   toggleHiddenMsg();
 };
+
 function loadCards() {
   for(var i = 0; i < ideas.length; i++) {
     appendCard(ideas[i]);
   }; 
 };
+
 function cardBtnHelper(e) {
   if (e.target.classList.contains('star-btn')) {
     toggleStar(e);
@@ -79,6 +85,7 @@ function cardBtnHelper(e) {
     deleteCardFromDom(e);
   };
 };
+
 function deleteCardFromDom(e) {
   e.target.closest(".card-display").remove();
   var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
@@ -86,6 +93,7 @@ function deleteCardFromDom(e) {
   idea.deleteIdea(cardIdentifier)
   toggleHiddenMsg();
 };
+
 function enableNewQualityBtn() {
     if (newQualityInput.value === '' ){
         newQualityBtn.disabled = true;
@@ -93,16 +101,19 @@ function enableNewQualityBtn() {
         newQualityBtn.disabled = false;
     };
 };
+
 function findIdeaIndex(cardId) {
   return ideas.find(function(idea) {
     return idea.id == cardId
   });
 };
+
 function getIdeafromArray(e) {
  var cardIdentifier = e.target.closest(".card-display").getAttribute("data-id");
  var targetCard = findIdeaIndex(cardIdentifier);
  return targetCard;
 };
+
 function toggleStar(e) {
   if (e.target.className === "star-btn"){
     var fetchCard = getIdeafromArray(e); 
@@ -115,6 +126,7 @@ function toggleStar(e) {
   };
     fetchCard.saveToStorage(ideas);
 };
+
 function appendCard({title, body, star, quality, qualitySelect, id}) {
   var starImg = star ? "images/star-active.svg" : "images/star.svg"
     console.log(starImg)
@@ -137,6 +149,7 @@ function appendCard({title, body, star, quality, qualitySelect, id}) {
   cardDisplayArea.insertAdjacentHTML('afterbegin', cardToAppend);
   toggleHiddenMsg();
 };
+
 function updateCard(e){
   if (e.target.className === "card-title" || e.target.className === "card-body") {
       var titleText = e.target.closest(".card-display").querySelector(".card-title").innerText;
@@ -146,6 +159,7 @@ function updateCard(e){
       fetchCard.saveToStorage(ideas);
   };
 };
+
 function updateCardEnter(e){
   if (e.keyCode === 13) {
       var titleText = e.target.closest(".card-display").querySelector(".card-title").innerText;
@@ -155,6 +169,5 @@ function updateCardEnter(e){
       fetchCard.updateIdea(titleText, bodyText);
       fetchCard.saveToStorage(ideas);
   };
-
 };
 

@@ -307,7 +307,7 @@ nav {
       grid-template-columns: 90%;
       position: absolute;
       margin: 55vh 0 0 5%;
-      width: 90%;
+      width: 100%;
       z-index: -22;
     }
 
